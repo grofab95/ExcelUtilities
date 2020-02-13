@@ -1,0 +1,10 @@
+C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll
+C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.pdb
+C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.csprojAssemblyReference.cache
+C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.dll
+C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.pdb
