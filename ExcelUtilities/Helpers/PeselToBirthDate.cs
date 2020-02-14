@@ -1,26 +1,18 @@
 ﻿using System;
 
-namespace ExcelUtilities
+namespace ExcelUtilities.Pesel
 {
-    public class PeselToBirthDate
+    public class PeselToBirthDate : Pesel
     {
-        private long _pesel;
-        private string _peselStr;
+        public DateTime BirthDate { get; set; }
 
-        public PeselToBirthDate(long pesel)
+        public PeselToBirthDate(string inString) : base(inString)
         {
-            VaildatePesel(pesel);
-            _pesel = pesel;
-            _peselStr = pesel.ToString();
-        }
-
-        private void VaildatePesel(long pesel)
-        {
-            Validators.ValidateCell(pesel.ToString());
+            BirthDate = GetBirthDate();
         }
 
         private string GetStringFromPesel(int pos) => 
-            _peselStr[pos].ToString();
+            InString[pos].ToString();
 
         private bool IsPeselAfter2000()
         {
@@ -42,7 +34,7 @@ namespace ExcelUtilities
             throw new NotImplementedException("Brak obsługi roczników > 2000");
         }
 
-        public DateTime GetBirthDate() => 
+        private DateTime GetBirthDate() => 
              IsPeselAfter2000()
                 ? ChangePeselAfter2000()
                 : ChangePesel();

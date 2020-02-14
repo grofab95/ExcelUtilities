@@ -1,4 +1,5 @@
 ﻿using ExcelUtilities.Helpers;
+using ExcelUtilities.Pesel;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -14,7 +15,8 @@ namespace ExcelUtilities
 
         public Excel(ExcelFileFactors excelFile)
         {
-            var fullPath = excelFile.Path + "\\" + excelFile.FileName;
+            //var fullPath = excelFile.Path + "\\" + excelFile.FileName;
+            var fullPath = $"{excelFile.Path}\\{excelFile.FileName}.xlsx";
             _excelFile = excelFile;
             _workbook = _excel.Workbooks.Open(fullPath);
             _worksheet = _workbook.Worksheets[1];
@@ -23,9 +25,7 @@ namespace ExcelUtilities
         public string ReadCell(string cellLocString)
         {
             var cellLoc = ExcelCell.Translate(cellLocString);
-            return _worksheet.Cells[cellLoc.X, cellLoc.Y].Value2 != null
-                ? _worksheet.Cells[cellLoc.X, cellLoc.Y].Value2.ToString() 
-                : String.Empty;
+            return ReadCell(cellLoc.X, cellLoc.Y);
         }
 
         public string ReadCell(int x, int y)
@@ -35,18 +35,22 @@ namespace ExcelUtilities
                 : String.Empty;
         }
 
-        public List<string> ReadColumns(string firstCell)
+        public Dictionary<int, PeselToBirthDate> GetPesele(string firstCell)
         {
             var cellLoc = ExcelCell.Translate(firstCell);
+            var pesele = new Dictionary<int, PeselToBirthDate>();
+            var index = 1; 
             var x = cellLoc.X;
-            var y = cellLoc.Y;
-            var rows = new List<string>();
-            while (ReadCell(x, y) != String.Empty && !CellValidations.IsCellPesel(ReadCell(x, y)))
+            _=new PeselToBirthDate(ReadCell(x, cellLoc.Y));
+            while (ReadCell(x, cellLoc.Y) != String.Empty &&
+                !Validators.IsPesel(ReadCell(x, cellLoc.Y)))
             {
-                rows.Add(ReadCell(x, y));
+                pesele.Add(index, new PeselToBirthDate(ReadCell(x, cellLoc.Y)));                
+                index++;
                 x++;
             }
-            return rows;
+            int yyy = x;
+            return pesele;
         }
 
         public void Dispose() => _workbook.Close();
