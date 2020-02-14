@@ -2,7 +2,8 @@
 {
     public class ColumnFactors
     {
-        public string FirstPESELCell { get; set; }
-        public long FirstPESEL { get; set; }
+        public string FirstPeselCell { get; set; }
+        public long FirstPesel { get; set; }
+        public int PeselAmount { get; set; }
     }
 }

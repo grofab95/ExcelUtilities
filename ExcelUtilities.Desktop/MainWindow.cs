@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExcelUtilities.Pesel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
@@ -8,15 +9,28 @@ namespace ExcelUtilities.Desktop
     public partial class MainWindow : Form
     {
         private ExcelFileFactors _excelFile;
-        private List<string> _pesele;
+        private Dictionary<int, PeselToBirthDate> _pesele;
 
         public MainWindow()
         {
             InitializeComponent();
             ComponentReset();
+            WindowComponentConfig();
+        }
+
+        private void WindowComponentConfig()
+        {
             GB_CellLocation.Enabled = false;
-            TB_FilePath.Text = $"C:\\Users\\Fabian\\Desktop";
-            TB_FileName.Text = "test.xlsx";
+            //TB_FilePath.Text = $"C:\\Users\\Fabian\\Desktop";
+            //TB_FileName.Text = "test";
+            GB_Pesele.Visible = false;
+            GB_FileSummary.Visible = false;
+            Button_Show.Enabled = false;
+            panel1.AutoScroll = false;
+            panel1.HorizontalScroll.Enabled = false;
+            panel1.HorizontalScroll.Visible = false;
+            panel1.HorizontalScroll.Maximum = 0;
+            panel1.AutoScroll = true;
         }
 
         private void ComponentReset()
@@ -29,7 +43,6 @@ namespace ExcelUtilities.Desktop
             Label_FirstPesel.Text = String.Empty;
             Label_PeselAmount.Text = String.Empty;
             Label_PESELE.Text = String.Empty;
-            Label_Daty.Text = String.Empty;
         }
 
         private void UpdateSummary(ExcelFileFactors excelFile)
@@ -40,112 +53,101 @@ namespace ExcelUtilities.Desktop
 
         private void UpdateSummary(ColumnFactors columnFactors)
         {
-            Label_FirstCell.Text =  columnFactors.FirstPESELCell.ToUpper();
-            Label_FirstPesel.Text = columnFactors.FirstPESEL.ToString();
+            Label_FirstCell.Text = columnFactors.FirstPeselCell.ToUpper();
+            Label_FirstPesel.Text = columnFactors.FirstPesel.ToString();
+            Label_PeselAmount.Text = columnFactors.PeselAmount.ToString();
+        }
+
+        private void PrintPesele()
+        {
+            var summary = string.Empty;
+            foreach (var pesel in _pesele)
+            {
+                if (pesel.Key < 10)
+                {
+                    summary += 
+                        $"  {pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BirthDate}{Environment.NewLine}";
+                }
+                else
+                {
+                    summary += 
+                        $"{pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BirthDate}{Environment.NewLine}";
+                }
+            }
+            Label_PESELE.Text = summary;
         }
 
         private void Button_OpenFile_Click(object sender, EventArgs e)
-        {
+        {            
             try
-            { 
-                _excelFile =  new ExcelFileFactors
+            {
+                Validators.IsInputEmpty(TB_FilePath.Text);
+                Validators.IsInputEmpty(TB_FileName.Text);
+                _excelFile = new ExcelFileFactors
                 {
                     Path = TB_FilePath.Text,
                     FileName = TB_FileName.Text
-                };                        
+                };
+                using (var _excel = new Excel(_excelFile)) { }
                 UpdateSummary(_excelFile);
                 GB_Excel.Enabled = false;
                 GB_CellLocation.Enabled = true;
+                GB_FileSummary.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
         }
-              
+
         private void Button_SearchCell_Click(object sender, EventArgs e)
-        {
+        {            
             try
-            {                
+            {
+                Validators.IsInputEmpty(TB_FirstCell.Text);
                 using (var _excel = new Excel(_excelFile))
                 {
-                    Validators.ValidateCell(_excel.ReadCell(TB_Cell.Text), TB_Cell.Text);
+                    _pesele = _excel.GetPesele(TB_FirstCell.Text);
                     var columnFactors = new ColumnFactors()
                     {
-                        FirstPESEL = long.Parse(_excel.ReadCell(TB_Cell.Text)),
-                        FirstPESELCell = TB_Cell.Text
+                        FirstPesel = _pesele.Single(pesel => pesel.Key == 1).Value.InNumber,
+                        FirstPeselCell = TB_FirstCell.Text,
+                        PeselAmount = _pesele.Count()
                     };
                     UpdateSummary(columnFactors);
-                    _pesele = _excel.ReadColumns(TB_Cell.Text);
-                    Label_PeselAmount.Text = _pesele.Count().ToString();
-                    PrintPESELE();
+                    Button_Show.Enabled = true;
                 }
-            } 
+            }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
-        }
-
-        private void PrintPESELE()
-        {
-            var x = 1;
-            var text = String.Empty;
-            foreach (var item in _pesele)
-            {
-                if (x < 10)
-                {
-                    text += "  " + x + ". -> " + item + Environment.NewLine;
-                } 
-                else
-                {
-                    text += x + ". -> " + item + Environment.NewLine;
-                }
-                x++;
-            }
-            Label_PESELE.Text = text;
-        }
-
-        private List<DateTime> CreateBirthdatesListFromPesele()
-        {
-            var birtDates = new List<DateTime>();            
-            foreach (var pesel in _pesele)
-            {
-                birtDates.Add(new PeselToBirthDate(long.Parse(pesel)).GetBirthDate());
-            }
-            return birtDates;
-        }
-
-        private void PrintBirthDates()
-        {
-            var x = 1;
-            var text = String.Empty;
-            foreach (var item in CreateBirthdatesListFromPesele())
-            {
-                if (x < 10)
-                {
-                    text += "  " + x + ". -> " + item.Date + Environment.NewLine;
-                }
-                else
-                {
-                    text += x + ". -> " + item.Date + Environment.NewLine;
-                }
-                x++;
-            }
-            Label_Daty.Text = text;
         }
 
         private void Button_Change_Click(object sender, EventArgs e)
         {
             try
             {
-                PrintBirthDates();
+                //PrintBirthDates();
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
 
+        }
+
+        private void Button_Show_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                GB_Pesele.Visible = true;
+                PrintPesele();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uwaga!");
+            }
         }
     }
 }
