@@ -1,13 +1,13 @@
 ﻿using ExcelUtilities.Enums;
-using ExcelUtilities.Exceptions;
+using System;
 
-namespace ExcelUtilities.Helpers
+namespace ExcelUtilities.Pesel
 {
-    public class PeselMonthConfig
+    public class PeselMonthTranslator
     {
         private PeselFactors _peselFactors;
         
-        public PeselMonthConfig(PeselFactors peselFactors)
+        public PeselMonthTranslator(PeselFactors peselFactors)
         {
             _peselFactors = peselFactors;
             ChangePeselFactors();
@@ -33,7 +33,7 @@ namespace ExcelUtilities.Helpers
                 return PeselYearRangesNames.YearInRange2000And2099;
             }
 
-            throw new InvalidYearRange(_peselFactors.Month);
+            throw new Exception();
         }
 
         private void ChangePeselFactors()
@@ -41,8 +41,8 @@ namespace ExcelUtilities.Helpers
             switch (CheckYearRangeUsingMonth())
             {
                 case PeselYearRangesNames.YearInRange1800And1899:
-                    _peselFactors.Month = 
-                        PeselMonthTranslator.GetCorrectMonth(
+                    _peselFactors.Month =
+                        PeselMonthConfig.GetCorrectMonth(
                             _peselFactors.Month, PeselYearRangesNames.YearInRange1800And1899);
                     _peselFactors.Year = int.Parse("18" + _peselFactors.Year.ToString());
                     break;
@@ -51,7 +51,7 @@ namespace ExcelUtilities.Helpers
                     break;
                 case PeselYearRangesNames.YearInRange2000And2099:
                     _peselFactors.Month =
-                        PeselMonthTranslator.GetCorrectMonth(
+                        PeselMonthConfig.GetCorrectMonth(
                             _peselFactors.Month, PeselYearRangesNames.YearInRange2000And2099);
                     _peselFactors.Year = int.Parse("20" + _peselFactors.Year.ToString());
                     break;

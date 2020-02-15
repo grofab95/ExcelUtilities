@@ -1,5 +1,4 @@
-﻿using ExcelUtilities.Helpers;
-using ExcelUtilities.Pesel;
+﻿using ExcelUtilities.Pesel;
 using Microsoft.Office.Interop.Excel;
 using System;
 using System.Collections.Generic;
@@ -35,7 +34,7 @@ namespace ExcelUtilities
                 : String.Empty;
         }
 
-        public Dictionary<int, PeselToBirthDate> GetPesele(string firstCell)
+        public Dictionary<int, Pesel> GetPesele(string firstCell)
         {
             var cellLoc = ExcelCell.Translate(firstCell);
             var pesele = new Dictionary<int, PeselToBirthDate>();

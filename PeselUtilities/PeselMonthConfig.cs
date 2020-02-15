@@ -1,9 +1,9 @@
 ﻿using ExcelUtilities.Enums;
 using System;
 
-namespace ExcelUtilities.Helpers
+namespace ExcelUtilities.Pesel
 {
-    public class PeselMonthTranslator
+    public class PeselMonthConfig
     {
         public static int GetCorrectMonth(int peselMonth, PeselYearRangesNames peselYearRangesNames)
         {

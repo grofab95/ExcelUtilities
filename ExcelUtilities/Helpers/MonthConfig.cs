@@ -1,4 +1,4 @@
-﻿namespace ExcelUtilities.Helpers
+﻿namespace ExcelUtilities.Pesel
 {
     public class MonthConfig
     {

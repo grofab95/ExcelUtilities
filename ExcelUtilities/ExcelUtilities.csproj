@@ -59,13 +59,11 @@
     <Compile Include="Exceptions\InvalidYearRange.cs" />
     <Compile Include="Helpers\ExcelCell.cs" />
     <Compile Include="Helpers\MonthConfig.cs" />
-    <Compile Include="Helpers\PeselFactors.cs" />
-    <Compile Include="Helpers\PeselMonthConfig.cs" />
-    <Compile Include="Helpers\PeselMonthTranslator.cs" />
+    <Compile Include="Pesel\PeselFactors.cs" />
+    <Compile Include="Pesel\PeselMonthTranslator.cs" />
+    <Compile Include="Pesel\PeselMonthConfig.cs" />
     <Compile Include="Pesel\Pesel.cs" />
-    <Compile Include="Helpers\PeselToBirthDate.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sdfdsValidators.cs" />
     <Compile Include="Validators\PeselValidations.cs" />
     <Compile Include="Validators\SpreadsheetValidations.cs" />
   </ItemGroup>

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExcelUtilities.Helpers
+namespace ExcelUtilities.Pesel
 {
     public class ExcelCell
     {
