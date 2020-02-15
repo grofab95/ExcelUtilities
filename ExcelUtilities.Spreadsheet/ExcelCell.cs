@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace ExcelUtilities.Helpers
+namespace ExcelUtilities.Spreadsheet
 {
     public class ExcelCell
     {

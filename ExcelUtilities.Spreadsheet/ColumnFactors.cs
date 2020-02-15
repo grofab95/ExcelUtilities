@@ -1,4 +1,4 @@
-﻿namespace ExcelUtilities
+﻿namespace ExcelUtilities.Spreadsheet
 {
     public class ColumnFactors
     {

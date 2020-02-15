@@ -1,4 +1,5 @@
-﻿using ExcelUtilities.Pesel;
+﻿using ExcelUtilities.Spreadsheet;
+using PeselUtilities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace ExcelUtilities.Desktop
     public partial class MainWindow : Form
     {
         private ExcelFileFactors _excelFile;
-        private Dictionary<int, PeselToBirthDate> _pesele;
+        private Dictionary<int, Pesel> _pesele;
 
         public MainWindow()
         {
@@ -21,8 +22,8 @@ namespace ExcelUtilities.Desktop
         private void WindowComponentConfig()
         {
             GB_CellLocation.Enabled = false;
-            //TB_FilePath.Text = $"C:\\Users\\Fabian\\Desktop";
-            //TB_FileName.Text = "test";
+            TB_FilePath.Text = $"C:\\Users\\Fabian\\Desktop";
+            TB_FileName.Text = "test";
             GB_Pesele.Visible = false;
             GB_FileSummary.Visible = false;
             Button_Show.Enabled = false;
@@ -66,12 +67,12 @@ namespace ExcelUtilities.Desktop
                 if (pesel.Key < 10)
                 {
                     summary += 
-                        $"  {pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BirthDate}{Environment.NewLine}";
+                        $"  {pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BornDate}{Environment.NewLine}";
                 }
                 else
                 {
                     summary += 
-                        $"{pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BirthDate}{Environment.NewLine}";
+                        $"{pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BornDate}{Environment.NewLine}";
                 }
             }
             Label_PESELE.Text = summary;
@@ -81,8 +82,8 @@ namespace ExcelUtilities.Desktop
         {            
             try
             {
-                Validators.IsInputEmpty(TB_FilePath.Text);
-                Validators.IsInputEmpty(TB_FileName.Text);
+                //Validators.IsInputEmpty(TB_FilePath.Text);
+                //Validators.IsInputEmpty(TB_FileName.Text);
                 _excelFile = new ExcelFileFactors
                 {
                     Path = TB_FilePath.Text,
@@ -103,14 +104,15 @@ namespace ExcelUtilities.Desktop
         private void Button_SearchCell_Click(object sender, EventArgs e)
         {            
             try
-            {
-                Validators.IsInputEmpty(TB_FirstCell.Text);
+            {                
+                //Validators.IsInputEmpty(TB_FirstCell.Text);
                 using (var _excel = new Excel(_excelFile))
                 {
-                    _pesele = _excel.GetPesele(TB_FirstCell.Text);
+                    var pesel = new Pesel(_excel.ReadCell(TB_FirstCell.Text), TB_FirstCell.Text);
+                    _pesele = _excel.GetPesele(TB_FirstCell.Text, pesel);
                     var columnFactors = new ColumnFactors()
                     {
-                        FirstPesel = _pesele.Single(pesel => pesel.Key == 1).Value.InNumber,
+                        FirstPesel = _pesele.Single(x => x.Key == 1).Value.InNumber,
                         FirstPeselCell = TB_FirstCell.Text,
                         PeselAmount = _pesele.Count()
                     };

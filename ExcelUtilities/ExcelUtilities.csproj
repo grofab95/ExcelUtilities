@@ -45,15 +45,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell\CellFactors.cs" />
-    <Compile Include="ColumnFactors.cs" />
-    <Compile Include="Excel.cs" />
-    <Compile Include="ExcelFileFactors.cs" />
-    <Compile Include="Helpers\ExcelCell.cs" />
-    <Compile Include="Pesel\Pesel.cs" />
-    <Compile Include="Helpers\PeselToBirthDate.cs" />
+    <Compile Include="Exceptions\Cell_IsNotPesel.cs" />
+    <Compile Include="Exceptions\EmptyCell.cs" />
+    <Compile Include="Exceptions\ExcelUtilitiesException.cs" />
+    <Compile Include="Exceptions\InvalidDaysNumberInMonth.cs" />
+    <Compile Include="Exceptions\InvalidPeselFormat.cs" />
+    <Compile Include="Exceptions\InvalidPeselMonthRange.cs" />
+    <Compile Include="Exceptions\InvalidYearRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validators.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
