@@ -1,4 +1,4 @@
-﻿namespace ExcelUtilities.Enums
+﻿namespace PeselUtilities.Enums
 {
     public enum PeselYearRangesNames
     {

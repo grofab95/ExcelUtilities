@@ -1,0 +1,8 @@
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\PeselUtilities.pdb
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.csproj.CopyComplete
+D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.pdb

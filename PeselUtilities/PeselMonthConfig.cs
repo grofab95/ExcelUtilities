@@ -1,7 +1,7 @@
-﻿using ExcelUtilities.Enums;
+﻿using PeselUtilities.Enums;
 using System;
 
-namespace ExcelUtilities.Pesel
+namespace PeselUtilities
 {
     public class PeselMonthConfig
     {
@@ -11,25 +11,18 @@ namespace ExcelUtilities.Pesel
             switch (peselYearRangesNames)
             {
                 case PeselYearRangesNames.YearInRange1800And1899:
-                    if (peselMonth >= 81 && peselMonth <= 89)
-                    {
-                        return int.Parse(peselMonthStr[1].ToString());
-                    }
-                    else
-                    {
-                        return int.Parse("1" + peselMonthStr[1].ToString());
-                    }
+                    return (peselMonth >= 81 && peselMonth <= 89)
+                        ? int.Parse(peselMonthStr[1].ToString())
+                        : int.Parse("1" + peselMonthStr[1].ToString());                    
+                
+                case PeselYearRangesNames.YearInRange2000And2099:
+                    return (peselMonth >= 21 && peselMonth <= 29)
+                        ? int.Parse(peselMonthStr[1].ToString())
+                        : int.Parse("1" + peselMonthStr[1].ToString());
+
                 case PeselYearRangesNames.YearInRange1900And1999:
                     return peselMonth;
-                case PeselYearRangesNames.YearInRange2000And2099:
-                    if (peselMonth >= 21 && peselMonth <= 29)
-                    {
-                        return int.Parse(peselMonthStr[1].ToString());
-                    }
-                    else
-                    {
-                        return int.Parse("1" + peselMonthStr[1].ToString());
-                    }
+
             }
             throw new Exception("PeselMonthTranslator -> zły enum...");
         }

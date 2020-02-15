@@ -1,9 +1,9 @@
-﻿using ExcelUtilities.Pesel;
-using Microsoft.Office.Interop.Excel;
+﻿using Microsoft.Office.Interop.Excel;
+using PeselUtilities;
 using System;
 using System.Collections.Generic;
 
-namespace ExcelUtilities
+namespace ExcelUtilities.Spreadsheet
 {
     public class Excel : IDisposable
     {
@@ -34,20 +34,19 @@ namespace ExcelUtilities
                 : String.Empty;
         }
 
-        public Dictionary<int, Pesel> GetPesele(string firstCell)
+        public Dictionary<int, Pesel> GetPesele(string firstCell, Pesel pesel)
         {
             var cellLoc = ExcelCell.Translate(firstCell);
-            var pesele = new Dictionary<int, PeselToBirthDate>();
+            var pesele = new Dictionary<int, Pesel>();
             var index = 1; 
             var x = cellLoc.X;
-            _=new PeselToBirthDate(ReadCell(x, cellLoc.Y));
-            //while (ReadCell(x, cellLoc.Y) != String.Empty &&
-            //    !Validators.IsPesel(ReadCell(x, cellLoc.Y)))
-            //{
-            //    pesele.Add(index, new PeselToBirthDate(ReadCell(x, cellLoc.Y)));                
-            //    index++;
-            //    x++;
-            //}
+            while (ReadCell(x, cellLoc.Y) != String.Empty)
+            {
+                var qqq = new Pesel(ReadCell(x, cellLoc.Y), "Z0");
+                pesele.Add(index, new Pesel(ReadCell(x, cellLoc.Y), "Z0"));                
+                index++;
+                x++;
+            }
             int yyy = x;
             return pesele;
         }

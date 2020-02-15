@@ -1,21 +1,20 @@
-﻿namespace ExcelUtilities.Pesel
+﻿namespace PeselUtilities.Helpers
 {
-    public class MonthConfig
+    public class MonthsConfig
     {
         private int _year;
         private int[] _monthsLength = new int[]
             { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };        
 
-        public MonthConfig(int year)
+        public MonthsConfig(int year)
         {
             _year = year;
             ChangeFebruaryLengthWhenLeapYear();
         }
                
         private bool IsLeapYear()
-        {
-            return (_year % 4 == 0 && _year % 100 != 0 || _year % 400 == 0);
-        }
+            => (_year % 4 == 0 && _year % 100 != 0 || _year % 400 == 0);
+        
 
         private void ChangeFebruaryLengthWhenLeapYear()
         {

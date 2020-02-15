@@ -1,7 +1,6 @@
-﻿using ExcelUtilities.Validators;
-using System;
+﻿using System;
 
-namespace ExcelUtilities.Pesel
+namespace PeselUtilities
 {
     public class Pesel
     {

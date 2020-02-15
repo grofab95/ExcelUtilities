@@ -45,11 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell\CellFactors.cs" />
-    <Compile Include="ColumnFactors.cs" />
-    <Compile Include="Enums\PeselYearRangesNames.cs" />
-    <Compile Include="Excel.cs" />
-    <Compile Include="ExcelFileFactors.cs" />
     <Compile Include="Exceptions\Cell_IsNotPesel.cs" />
     <Compile Include="Exceptions\EmptyCell.cs" />
     <Compile Include="Exceptions\ExcelUtilitiesException.cs" />
@@ -57,15 +52,7 @@
     <Compile Include="Exceptions\InvalidPeselFormat.cs" />
     <Compile Include="Exceptions\InvalidPeselMonthRange.cs" />
     <Compile Include="Exceptions\InvalidYearRange.cs" />
-    <Compile Include="Helpers\ExcelCell.cs" />
-    <Compile Include="Helpers\MonthConfig.cs" />
-    <Compile Include="Pesel\PeselFactors.cs" />
-    <Compile Include="Pesel\PeselMonthTranslator.cs" />
-    <Compile Include="Pesel\PeselMonthConfig.cs" />
-    <Compile Include="Pesel\Pesel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Validators\PeselValidations.cs" />
-    <Compile Include="Validators\SpreadsheetValidations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

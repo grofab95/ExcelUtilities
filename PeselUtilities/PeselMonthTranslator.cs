@@ -1,7 +1,7 @@
-﻿using ExcelUtilities.Enums;
+﻿using PeselUtilities.Enums;
 using System;
 
-namespace ExcelUtilities.Pesel
+namespace PeselUtilities
 {
     public class PeselMonthTranslator
     {

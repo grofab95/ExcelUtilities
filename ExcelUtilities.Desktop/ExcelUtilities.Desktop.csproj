@@ -81,9 +81,17 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ExcelUtilities.Spreadsheet\ExcelUtilities.Spreadsheet.csproj">
+      <Project>{5c8677f2-0ee6-4cff-ade9-eeaf08fca0d9}</Project>
+      <Name>ExcelUtilities.Spreadsheet</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ExcelUtilities\ExcelUtilities.csproj">
       <Project>{fac243a0-01af-4f5f-8494-edd9302e36f2}</Project>
       <Name>ExcelUtilities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PeselUtilities\PeselUtilities.csproj">
+      <Project>{c021ed54-a668-4e72-b557-3629fca3666c}</Project>
+      <Name>PeselUtilities</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

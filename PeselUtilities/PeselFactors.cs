@@ -1,4 +1,4 @@
-﻿namespace ExcelUtilities.Pesel
+﻿namespace PeselUtilities
 {
     public class PeselFactors
     {

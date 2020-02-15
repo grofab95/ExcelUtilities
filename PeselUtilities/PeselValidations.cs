@@ -1,7 +1,7 @@
 ﻿using ExcelUtilities.Exceptions;
-using ExcelUtilities.Pesel;
+using PeselUtilities.Helpers;
 
-namespace ExcelUtilities.Validators
+namespace PeselUtilities
 {
     public class PeselValidations
     {
@@ -15,7 +15,7 @@ namespace ExcelUtilities.Validators
 
         public static void ValidateMonthLenghtByYear(PeselFactors peselFactors, string cellLocalization)
         {
-            var monthConfig = new MonthConfig(peselFactors.Year);
+            var monthConfig = new MonthsConfig(peselFactors.Year);
             if (peselFactors.Day > monthConfig[peselFactors.Month])
             {
                 throw new InvalidDaysNumberInMonth(peselFactors.Day, peselFactors.Month, cellLocalization);

@@ -1,0 +1,10 @@
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\ExcelUtilities.Spreadsheet.dll
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\ExcelUtilities.Spreadsheet.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\obj\Debug\ExcelUtilities.Spreadsheet.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\obj\Debug\ExcelUtilities.Spreadsheet.csproj.CopyComplete
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\obj\Debug\ExcelUtilities.Spreadsheet.dll
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\obj\Debug\ExcelUtilities.Spreadsheet.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Spreadsheet\bin\Debug\PeselUtilities.pdb

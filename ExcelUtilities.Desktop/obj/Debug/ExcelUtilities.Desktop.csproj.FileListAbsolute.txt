@@ -22,3 +22,7 @@ D:\code\ExcelUtilities\ExcelUtilities.Desktop\obj\Debug\ExcelUtilities.Desktop.c
 D:\code\ExcelUtilities\ExcelUtilities.Desktop\obj\Debug\ExcelUtilities.Desktop.csproj.CopyComplete
 D:\code\ExcelUtilities\ExcelUtilities.Desktop\obj\Debug\ExcelUtilities.Desktop.exe
 D:\code\ExcelUtilities\ExcelUtilities.Desktop\obj\Debug\ExcelUtilities.Desktop.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Desktop\bin\Debug\ExcelUtilities.Spreadsheet.dll
+D:\code\ExcelUtilities\ExcelUtilities.Desktop\bin\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Desktop\bin\Debug\ExcelUtilities.Spreadsheet.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Desktop\bin\Debug\PeselUtilities.pdb
