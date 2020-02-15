@@ -9,7 +9,7 @@ namespace ExcelUtilities.Pesel
         
         public Pesel(string inString)
         {
-            Validators.ValidatePesel(inString);
+            //Validators.ValidatePesel(inString);
             InString = inString;
             InNumber = long.Parse(inString);
         }

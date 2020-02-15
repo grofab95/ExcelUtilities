@@ -81,8 +81,8 @@ namespace ExcelUtilities.Desktop
         {            
             try
             {
-                Validators.IsInputEmpty(TB_FilePath.Text);
-                Validators.IsInputEmpty(TB_FileName.Text);
+                //Validators.IsInputEmpty(TB_FilePath.Text);
+                //Validators.IsInputEmpty(TB_FileName.Text);
                 _excelFile = new ExcelFileFactors
                 {
                     Path = TB_FilePath.Text,
@@ -104,7 +104,7 @@ namespace ExcelUtilities.Desktop
         {            
             try
             {
-                Validators.IsInputEmpty(TB_FirstCell.Text);
+                //Validators.IsInputEmpty(TB_FirstCell.Text);
                 using (var _excel = new Excel(_excelFile))
                 {
                     _pesele = _excel.GetPesele(TB_FirstCell.Text);

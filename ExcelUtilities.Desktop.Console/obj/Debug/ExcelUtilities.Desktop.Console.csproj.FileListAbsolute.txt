@@ -1,0 +1,9 @@
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\obj\Debug\ExcelUtilities.Desktop.Console.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\bin\Debug\ExcelUtilities.Desktop.Console.exe.config
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\bin\Debug\ExcelUtilities.Desktop.Console.exe
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\bin\Debug\ExcelUtilities.Desktop.Console.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\bin\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\bin\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\obj\Debug\ExcelUtilities.Desktop.Console.csproj.CopyComplete
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\obj\Debug\ExcelUtilities.Desktop.Console.exe
+D:\code\ExcelUtilities\ExcelUtilities.Desktop.Console\obj\Debug\ExcelUtilities.Desktop.Console.pdb

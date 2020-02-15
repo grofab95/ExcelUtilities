@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAC243A0-01AF-4F5F-8494-EDD9302E36F2}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>ExcelUtilities</RootNamespace>
-    <AssemblyName>ExcelUtilities</AssemblyName>
+    <ProjectGuid>{DBB1BE8E-8D98-4FF1-88A2-BDB42244BB96}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>ExcelUtilities.Desktop.Console</RootNamespace>
+    <AssemblyName>ExcelUtilities.Desktop.Console</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -23,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -31,10 +33,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
-      <HintPath>..\packages\Microsoft.Office.Interop.Excel.15.0.4795.1000\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -45,32 +43,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Cell\CellFactors.cs" />
-    <Compile Include="ColumnFactors.cs" />
-    <Compile Include="Enums\PeselYearRangesNames.cs" />
-    <Compile Include="Excel.cs" />
-    <Compile Include="ExcelFileFactors.cs" />
-    <Compile Include="Exceptions\Cell_IsNotPesel.cs" />
-    <Compile Include="Exceptions\EmptyCell.cs" />
-    <Compile Include="Exceptions\ExcelUtilitiesException.cs" />
-    <Compile Include="Exceptions\InvalidDaysNumberInMonth.cs" />
-    <Compile Include="Exceptions\InvalidPeselFormat.cs" />
-    <Compile Include="Exceptions\InvalidPeselMonthRange.cs" />
-    <Compile Include="Exceptions\InvalidYearRange.cs" />
-    <Compile Include="Helpers\ExcelCell.cs" />
-    <Compile Include="Helpers\MonthConfig.cs" />
-    <Compile Include="Helpers\PeselFactors.cs" />
-    <Compile Include="Helpers\PeselMonthConfig.cs" />
-    <Compile Include="Helpers\PeselMonthTranslator.cs" />
-    <Compile Include="Pesel\Pesel.cs" />
-    <Compile Include="Helpers\PeselToBirthDate.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="sdfdsValidators.cs" />
-    <Compile Include="Validators\PeselValidations.cs" />
-    <Compile Include="Validators\SpreadsheetValidations.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ExcelUtilities\ExcelUtilities.csproj">
+      <Project>{fac243a0-01af-4f5f-8494-edd9302e36f2}</Project>
+      <Name>ExcelUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

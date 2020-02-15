@@ -42,13 +42,13 @@ namespace ExcelUtilities
             var index = 1; 
             var x = cellLoc.X;
             _=new PeselToBirthDate(ReadCell(x, cellLoc.Y));
-            while (ReadCell(x, cellLoc.Y) != String.Empty &&
-                !Validators.IsPesel(ReadCell(x, cellLoc.Y)))
-            {
-                pesele.Add(index, new PeselToBirthDate(ReadCell(x, cellLoc.Y)));                
-                index++;
-                x++;
-            }
+            //while (ReadCell(x, cellLoc.Y) != String.Empty &&
+            //    !Validators.IsPesel(ReadCell(x, cellLoc.Y)))
+            //{
+            //    pesele.Add(index, new PeselToBirthDate(ReadCell(x, cellLoc.Y)));                
+            //    index++;
+            //    x++;
+            //}
             int yyy = x;
             return pesele;
         }
