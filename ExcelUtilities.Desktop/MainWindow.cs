@@ -131,7 +131,6 @@ namespace ExcelUtilities.Desktop
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
-
         }
 
         private void Button_Show_Click(object sender, EventArgs e)
@@ -145,6 +144,23 @@ namespace ExcelUtilities.Desktop
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
+        }
+
+        private void BUTTON_WriteBornDatesToExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors))
+                {
+                    _excel.UpdateColumn("F2", MainWindowFactors.Pesele);
+                    _excel.SaveAs();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uwaga!");
+            }
+
         }
     }
 }

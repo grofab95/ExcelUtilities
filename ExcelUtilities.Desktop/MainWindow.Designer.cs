@@ -56,6 +56,7 @@
             this.LABEL_Pesele = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GB_Pesele = new System.Windows.Forms.GroupBox();
+            this.BUTTON_WriteBornDatesToExcel = new System.Windows.Forms.Button();
             this.GB_Excel.SuspendLayout();
             this.GB_CellLocation.SuspendLayout();
             this.GB_FileSummary.SuspendLayout();
@@ -355,6 +356,17 @@
             this.GB_Pesele.TabStop = false;
             this.GB_Pesele.Text = "Pesele";
             // 
+            // BUTTON_WriteBornDatesToExcel
+            // 
+            this.BUTTON_WriteBornDatesToExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BUTTON_WriteBornDatesToExcel.Location = new System.Drawing.Point(631, 24);
+            this.BUTTON_WriteBornDatesToExcel.Name = "BUTTON_WriteBornDatesToExcel";
+            this.BUTTON_WriteBornDatesToExcel.Size = new System.Drawing.Size(190, 50);
+            this.BUTTON_WriteBornDatesToExcel.TabIndex = 11;
+            this.BUTTON_WriteBornDatesToExcel.Text = "Wpisz daty do excela";
+            this.BUTTON_WriteBornDatesToExcel.UseVisualStyleBackColor = true;
+            this.BUTTON_WriteBornDatesToExcel.Click += new System.EventHandler(this.BUTTON_WriteBornDatesToExcel_Click);
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +374,7 @@
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(833, 658);
+            this.Controls.Add(this.BUTTON_WriteBornDatesToExcel);
             this.Controls.Add(this.GB_Pesele);
             this.Controls.Add(this.GB_FileSummary);
             this.Controls.Add(this.GB_CellLocation);
@@ -414,6 +427,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox GB_Pesele;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button BUTTON_WriteBornDatesToExcel;
     }
 }
 
