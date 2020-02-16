@@ -12,7 +12,7 @@ namespace ExcelUtilities.Spreadsheet
                 "u", "v", "w", "x", "y", "z" 
         };
 
-        public static CellFactors Translate(string cell) 
+        public static CellFactors TranslateFromString(string cell) 
         {
             return new CellFactors
             {
@@ -30,5 +30,8 @@ namespace ExcelUtilities.Spreadsheet
             }
             return int.Parse(numberStr);
         }
+
+        public static string TranslateFromXY(int x, int y)
+            => (_alphabet[x - 1].ToString() + y.ToString()).ToUpper();
     }
 }

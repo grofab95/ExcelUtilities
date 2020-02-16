@@ -29,33 +29,33 @@
         private void InitializeComponent()
         {
             this.Label_Title = new System.Windows.Forms.Label();
-            this.Button_OpenFile = new System.Windows.Forms.Button();
+            this.BUTTON_OpenExcel = new System.Windows.Forms.Button();
             this.Label_Path = new System.Windows.Forms.Label();
             this.Label_NameFile = new System.Windows.Forms.Label();
-            this.TB_FilePath = new System.Windows.Forms.TextBox();
-            this.TB_FileName = new System.Windows.Forms.TextBox();
+            this.TB_ExcelPath = new System.Windows.Forms.TextBox();
+            this.TB_ExcelName = new System.Windows.Forms.TextBox();
             this.GB_Excel = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.GB_CellLocation = new System.Windows.Forms.GroupBox();
-            this.Button_SearchCell = new System.Windows.Forms.Button();
+            this.BUTTON_SearchCell = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.Label_Cell = new System.Windows.Forms.Label();
             this.TB_FirstCell = new System.Windows.Forms.TextBox();
             this.GB_FileSummary = new System.Windows.Forms.GroupBox();
-            this.Label_FirstPesel = new System.Windows.Forms.Label();
+            this.BUTTON_ShowPesele = new System.Windows.Forms.Button();
+            this.LABEL_FirstPesel = new System.Windows.Forms.Label();
             this.FirstPESEL = new System.Windows.Forms.Label();
-            this.Label_Localization = new System.Windows.Forms.Label();
+            this.LABEL_Localization = new System.Windows.Forms.Label();
             this.Localization = new System.Windows.Forms.Label();
-            this.Label_FirstCell = new System.Windows.Forms.Label();
-            this.Label_PeselAmount = new System.Windows.Forms.Label();
-            this.Label_FileName = new System.Windows.Forms.Label();
+            this.LABEL_FirstCell = new System.Windows.Forms.Label();
+            this.LABEL_PeselAmount = new System.Windows.Forms.Label();
+            this.LABEL_ExcelName = new System.Windows.Forms.Label();
             this.PeselAmount = new System.Windows.Forms.Label();
             this.FirstCell = new System.Windows.Forms.Label();
             this.FileName = new System.Windows.Forms.Label();
-            this.Label_PESELE = new System.Windows.Forms.Label();
-            this.Button_Show = new System.Windows.Forms.Button();
+            this.LABEL_Pesele = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.GB_Pesele = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.GB_Excel.SuspendLayout();
             this.GB_CellLocation.SuspendLayout();
             this.GB_FileSummary.SuspendLayout();
@@ -73,16 +73,16 @@
             this.Label_Title.TabIndex = 0;
             this.Label_Title.Text = "Zamiana peselu na datę urodzenia";
             // 
-            // Button_OpenFile
+            // BUTTON_OpenExcel
             // 
-            this.Button_OpenFile.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_OpenFile.Location = new System.Drawing.Point(258, 106);
-            this.Button_OpenFile.Name = "Button_OpenFile";
-            this.Button_OpenFile.Size = new System.Drawing.Size(130, 28);
-            this.Button_OpenFile.TabIndex = 1;
-            this.Button_OpenFile.Text = "Otwórz arkusz";
-            this.Button_OpenFile.UseVisualStyleBackColor = true;
-            this.Button_OpenFile.Click += new System.EventHandler(this.Button_OpenFile_Click);
+            this.BUTTON_OpenExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BUTTON_OpenExcel.Location = new System.Drawing.Point(258, 106);
+            this.BUTTON_OpenExcel.Name = "BUTTON_OpenExcel";
+            this.BUTTON_OpenExcel.Size = new System.Drawing.Size(130, 28);
+            this.BUTTON_OpenExcel.TabIndex = 1;
+            this.BUTTON_OpenExcel.Text = "Otwórz arkusz";
+            this.BUTTON_OpenExcel.UseVisualStyleBackColor = true;
+            this.BUTTON_OpenExcel.Click += new System.EventHandler(this.Button_OpenFile_Click);
             // 
             // Label_Path
             // 
@@ -104,27 +104,27 @@
             this.Label_NameFile.TabIndex = 3;
             this.Label_NameFile.Text = "Nazwa arkusza:";
             // 
-            // TB_FilePath
+            // TB_ExcelPath
             // 
-            this.TB_FilePath.Location = new System.Drawing.Point(142, 34);
-            this.TB_FilePath.Name = "TB_FilePath";
-            this.TB_FilePath.Size = new System.Drawing.Size(246, 22);
-            this.TB_FilePath.TabIndex = 4;
+            this.TB_ExcelPath.Location = new System.Drawing.Point(142, 34);
+            this.TB_ExcelPath.Name = "TB_ExcelPath";
+            this.TB_ExcelPath.Size = new System.Drawing.Size(246, 22);
+            this.TB_ExcelPath.TabIndex = 4;
             // 
-            // TB_FileName
+            // TB_ExcelName
             // 
-            this.TB_FileName.Location = new System.Drawing.Point(142, 67);
-            this.TB_FileName.Name = "TB_FileName";
-            this.TB_FileName.Size = new System.Drawing.Size(207, 22);
-            this.TB_FileName.TabIndex = 5;
+            this.TB_ExcelName.Location = new System.Drawing.Point(142, 67);
+            this.TB_ExcelName.Name = "TB_ExcelName";
+            this.TB_ExcelName.Size = new System.Drawing.Size(207, 22);
+            this.TB_ExcelName.TabIndex = 5;
             // 
             // GB_Excel
             // 
             this.GB_Excel.Controls.Add(this.label1);
             this.GB_Excel.Controls.Add(this.Label_Path);
-            this.GB_Excel.Controls.Add(this.TB_FileName);
-            this.GB_Excel.Controls.Add(this.Button_OpenFile);
-            this.GB_Excel.Controls.Add(this.TB_FilePath);
+            this.GB_Excel.Controls.Add(this.TB_ExcelName);
+            this.GB_Excel.Controls.Add(this.BUTTON_OpenExcel);
+            this.GB_Excel.Controls.Add(this.TB_ExcelPath);
             this.GB_Excel.Controls.Add(this.Label_NameFile);
             this.GB_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GB_Excel.Location = new System.Drawing.Point(12, 80);
@@ -134,9 +134,19 @@
             this.GB_Excel.TabStop = false;
             this.GB_Excel.Text = "1. Wskaż lokalizację i nazwę arkusza";
             // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label1.Location = new System.Drawing.Point(350, 67);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(38, 20);
+            this.label1.TabIndex = 6;
+            this.label1.Text = ".xlsx";
+            // 
             // GB_CellLocation
             // 
-            this.GB_CellLocation.Controls.Add(this.Button_SearchCell);
+            this.GB_CellLocation.Controls.Add(this.BUTTON_SearchCell);
             this.GB_CellLocation.Controls.Add(this.label2);
             this.GB_CellLocation.Controls.Add(this.Label_Cell);
             this.GB_CellLocation.Controls.Add(this.TB_FirstCell);
@@ -148,16 +158,16 @@
             this.GB_CellLocation.TabStop = false;
             this.GB_CellLocation.Text = "2. Wskaż pierwszą komórkę kolumny zawierającej PESEL";
             // 
-            // Button_SearchCell
+            // BUTTON_SearchCell
             // 
-            this.Button_SearchCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_SearchCell.Location = new System.Drawing.Point(258, 74);
-            this.Button_SearchCell.Name = "Button_SearchCell";
-            this.Button_SearchCell.Size = new System.Drawing.Size(130, 28);
-            this.Button_SearchCell.TabIndex = 6;
-            this.Button_SearchCell.Text = "Szukaj";
-            this.Button_SearchCell.UseVisualStyleBackColor = true;
-            this.Button_SearchCell.Click += new System.EventHandler(this.Button_SearchCell_Click);
+            this.BUTTON_SearchCell.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BUTTON_SearchCell.Location = new System.Drawing.Point(258, 74);
+            this.BUTTON_SearchCell.Name = "BUTTON_SearchCell";
+            this.BUTTON_SearchCell.Size = new System.Drawing.Size(130, 28);
+            this.BUTTON_SearchCell.TabIndex = 6;
+            this.BUTTON_SearchCell.Text = "Szukaj";
+            this.BUTTON_SearchCell.UseVisualStyleBackColor = true;
+            this.BUTTON_SearchCell.Click += new System.EventHandler(this.Button_SearchCell_Click);
             // 
             // label2
             // 
@@ -189,14 +199,14 @@
             // 
             // GB_FileSummary
             // 
-            this.GB_FileSummary.Controls.Add(this.Button_Show);
-            this.GB_FileSummary.Controls.Add(this.Label_FirstPesel);
+            this.GB_FileSummary.Controls.Add(this.BUTTON_ShowPesele);
+            this.GB_FileSummary.Controls.Add(this.LABEL_FirstPesel);
             this.GB_FileSummary.Controls.Add(this.FirstPESEL);
-            this.GB_FileSummary.Controls.Add(this.Label_Localization);
+            this.GB_FileSummary.Controls.Add(this.LABEL_Localization);
             this.GB_FileSummary.Controls.Add(this.Localization);
-            this.GB_FileSummary.Controls.Add(this.Label_FirstCell);
-            this.GB_FileSummary.Controls.Add(this.Label_PeselAmount);
-            this.GB_FileSummary.Controls.Add(this.Label_FileName);
+            this.GB_FileSummary.Controls.Add(this.LABEL_FirstCell);
+            this.GB_FileSummary.Controls.Add(this.LABEL_PeselAmount);
+            this.GB_FileSummary.Controls.Add(this.LABEL_ExcelName);
             this.GB_FileSummary.Controls.Add(this.PeselAmount);
             this.GB_FileSummary.Controls.Add(this.FirstCell);
             this.GB_FileSummary.Controls.Add(this.FileName);
@@ -208,15 +218,26 @@
             this.GB_FileSummary.TabStop = false;
             this.GB_FileSummary.Text = "Właściwości arkusza";
             // 
-            // Label_FirstPesel
+            // BUTTON_ShowPesele
             // 
-            this.Label_FirstPesel.AutoSize = true;
-            this.Label_FirstPesel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_FirstPesel.Location = new System.Drawing.Point(171, 136);
-            this.Label_FirstPesel.Name = "Label_FirstPesel";
-            this.Label_FirstPesel.Size = new System.Drawing.Size(63, 16);
-            this.Label_FirstPesel.TabIndex = 10;
-            this.Label_FirstPesel.Text = "firstPesel";
+            this.BUTTON_ShowPesele.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.BUTTON_ShowPesele.Location = new System.Drawing.Point(258, 204);
+            this.BUTTON_ShowPesele.Name = "BUTTON_ShowPesele";
+            this.BUTTON_ShowPesele.Size = new System.Drawing.Size(130, 28);
+            this.BUTTON_ShowPesele.TabIndex = 8;
+            this.BUTTON_ShowPesele.Text = "Pokaż";
+            this.BUTTON_ShowPesele.UseVisualStyleBackColor = true;
+            this.BUTTON_ShowPesele.Click += new System.EventHandler(this.Button_Show_Click);
+            // 
+            // LABEL_FirstPesel
+            // 
+            this.LABEL_FirstPesel.AutoSize = true;
+            this.LABEL_FirstPesel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LABEL_FirstPesel.Location = new System.Drawing.Point(171, 136);
+            this.LABEL_FirstPesel.Name = "LABEL_FirstPesel";
+            this.LABEL_FirstPesel.Size = new System.Drawing.Size(63, 16);
+            this.LABEL_FirstPesel.TabIndex = 10;
+            this.LABEL_FirstPesel.Text = "firstPesel";
             // 
             // FirstPESEL
             // 
@@ -228,15 +249,15 @@
             this.FirstPESEL.TabIndex = 9;
             this.FirstPESEL.Text = "Pierwszy PESEL:";
             // 
-            // Label_Localization
+            // LABEL_Localization
             // 
-            this.Label_Localization.AutoSize = true;
-            this.Label_Localization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_Localization.Location = new System.Drawing.Point(106, 34);
-            this.Label_Localization.Name = "Label_Localization";
-            this.Label_Localization.Size = new System.Drawing.Size(42, 16);
-            this.Label_Localization.TabIndex = 8;
-            this.Label_Localization.Text = "name";
+            this.LABEL_Localization.AutoSize = true;
+            this.LABEL_Localization.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LABEL_Localization.Location = new System.Drawing.Point(106, 34);
+            this.LABEL_Localization.Name = "LABEL_Localization";
+            this.LABEL_Localization.Size = new System.Drawing.Size(42, 16);
+            this.LABEL_Localization.TabIndex = 8;
+            this.LABEL_Localization.Text = "name";
             // 
             // Localization
             // 
@@ -247,35 +268,35 @@
             this.Localization.TabIndex = 7;
             this.Localization.Text = "Lokalizacja:";
             // 
-            // Label_FirstCell
+            // LABEL_FirstCell
             // 
-            this.Label_FirstCell.AutoSize = true;
-            this.Label_FirstCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_FirstCell.Location = new System.Drawing.Point(171, 105);
-            this.Label_FirstCell.Name = "Label_FirstCell";
-            this.Label_FirstCell.Size = new System.Drawing.Size(28, 16);
-            this.Label_FirstCell.TabIndex = 6;
-            this.Label_FirstCell.Text = "first";
+            this.LABEL_FirstCell.AutoSize = true;
+            this.LABEL_FirstCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LABEL_FirstCell.Location = new System.Drawing.Point(171, 105);
+            this.LABEL_FirstCell.Name = "LABEL_FirstCell";
+            this.LABEL_FirstCell.Size = new System.Drawing.Size(28, 16);
+            this.LABEL_FirstCell.TabIndex = 6;
+            this.LABEL_FirstCell.Text = "first";
             // 
-            // Label_PeselAmount
+            // LABEL_PeselAmount
             // 
-            this.Label_PeselAmount.AutoSize = true;
-            this.Label_PeselAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_PeselAmount.Location = new System.Drawing.Point(171, 168);
-            this.Label_PeselAmount.Name = "Label_PeselAmount";
-            this.Label_PeselAmount.Size = new System.Drawing.Size(87, 16);
-            this.Label_PeselAmount.TabIndex = 5;
-            this.Label_PeselAmount.Text = "peselAmount";
+            this.LABEL_PeselAmount.AutoSize = true;
+            this.LABEL_PeselAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LABEL_PeselAmount.Location = new System.Drawing.Point(171, 168);
+            this.LABEL_PeselAmount.Name = "LABEL_PeselAmount";
+            this.LABEL_PeselAmount.Size = new System.Drawing.Size(87, 16);
+            this.LABEL_PeselAmount.TabIndex = 5;
+            this.LABEL_PeselAmount.Text = "peselAmount";
             // 
-            // Label_FileName
+            // LABEL_ExcelName
             // 
-            this.Label_FileName.AutoSize = true;
-            this.Label_FileName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.Label_FileName.Location = new System.Drawing.Point(171, 76);
-            this.Label_FileName.Name = "Label_FileName";
-            this.Label_FileName.Size = new System.Drawing.Size(42, 16);
-            this.Label_FileName.TabIndex = 3;
-            this.Label_FileName.Text = "name";
+            this.LABEL_ExcelName.AutoSize = true;
+            this.LABEL_ExcelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            this.LABEL_ExcelName.Location = new System.Drawing.Point(171, 76);
+            this.LABEL_ExcelName.Name = "LABEL_ExcelName";
+            this.LABEL_ExcelName.Size = new System.Drawing.Size(42, 16);
+            this.LABEL_ExcelName.TabIndex = 3;
+            this.LABEL_ExcelName.Text = "name";
             // 
             // PeselAmount
             // 
@@ -305,30 +326,19 @@
             this.FileName.TabIndex = 0;
             this.FileName.Text = "Nazwa arkusza:";
             // 
-            // Label_PESELE
+            // LABEL_Pesele
             // 
-            this.Label_PESELE.AutoSize = true;
-            this.Label_PESELE.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Label_PESELE.Location = new System.Drawing.Point(13, 18);
-            this.Label_PESELE.Name = "Label_PESELE";
-            this.Label_PESELE.Size = new System.Drawing.Size(56, 20);
-            this.Label_PESELE.TabIndex = 9;
-            this.Label_PESELE.Text = "pesele";
-            // 
-            // Button_Show
-            // 
-            this.Button_Show.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.Button_Show.Location = new System.Drawing.Point(258, 204);
-            this.Button_Show.Name = "Button_Show";
-            this.Button_Show.Size = new System.Drawing.Size(130, 28);
-            this.Button_Show.TabIndex = 8;
-            this.Button_Show.Text = "Pokaż";
-            this.Button_Show.UseVisualStyleBackColor = true;
-            this.Button_Show.Click += new System.EventHandler(this.Button_Show_Click);
+            this.LABEL_Pesele.AutoSize = true;
+            this.LABEL_Pesele.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.LABEL_Pesele.Location = new System.Drawing.Point(13, 18);
+            this.LABEL_Pesele.Name = "LABEL_Pesele";
+            this.LABEL_Pesele.Size = new System.Drawing.Size(56, 20);
+            this.LABEL_Pesele.TabIndex = 9;
+            this.LABEL_Pesele.Text = "pesele";
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.Label_PESELE);
+            this.panel1.Controls.Add(this.LABEL_Pesele);
             this.panel1.Location = new System.Drawing.Point(7, 21);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(368, 540);
@@ -344,16 +354,6 @@
             this.GB_Pesele.TabIndex = 11;
             this.GB_Pesele.TabStop = false;
             this.GB_Pesele.Text = "Pesele";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(350, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = ".xlsx";
             // 
             // MainWindow
             // 
@@ -387,30 +387,30 @@
         #endregion
 
         private System.Windows.Forms.Label Label_Title;
-        private System.Windows.Forms.Button Button_OpenFile;
+        private System.Windows.Forms.Button BUTTON_OpenExcel;
         private System.Windows.Forms.Label Label_Path;
         private System.Windows.Forms.Label Label_NameFile;
-        private System.Windows.Forms.TextBox TB_FilePath;
-        private System.Windows.Forms.TextBox TB_FileName;
+        private System.Windows.Forms.TextBox TB_ExcelPath;
+        private System.Windows.Forms.TextBox TB_ExcelName;
         private System.Windows.Forms.GroupBox GB_Excel;
         private System.Windows.Forms.GroupBox GB_CellLocation;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label Label_Cell;
         private System.Windows.Forms.TextBox TB_FirstCell;
         private System.Windows.Forms.GroupBox GB_FileSummary;
-        private System.Windows.Forms.Label Label_FirstCell;
-        private System.Windows.Forms.Label Label_PeselAmount;
-        private System.Windows.Forms.Label Label_FileName;
+        private System.Windows.Forms.Label LABEL_FirstCell;
+        private System.Windows.Forms.Label LABEL_PeselAmount;
+        private System.Windows.Forms.Label LABEL_ExcelName;
         private System.Windows.Forms.Label PeselAmount;
         private System.Windows.Forms.Label FirstCell;
         private System.Windows.Forms.Label FileName;
-        private System.Windows.Forms.Label Label_Localization;
+        private System.Windows.Forms.Label LABEL_Localization;
         private System.Windows.Forms.Label Localization;
-        private System.Windows.Forms.Button Button_SearchCell;
-        private System.Windows.Forms.Label Label_FirstPesel;
+        private System.Windows.Forms.Button BUTTON_SearchCell;
+        private System.Windows.Forms.Label LABEL_FirstPesel;
         private System.Windows.Forms.Label FirstPESEL;
-        private System.Windows.Forms.Label Label_PESELE;
-        private System.Windows.Forms.Button Button_Show;
+        private System.Windows.Forms.Label LABEL_Pesele;
+        private System.Windows.Forms.Button BUTTON_ShowPesele;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox GB_Pesele;
         private System.Windows.Forms.Label label1;

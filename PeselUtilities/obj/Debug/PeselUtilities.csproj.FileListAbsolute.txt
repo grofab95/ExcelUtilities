@@ -6,3 +6,5 @@ D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.csprojAssemblyRef
 D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.csproj.CopyComplete
 D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.dll
 D:\code\ExcelUtilities\PeselUtilities\obj\Debug\PeselUtilities.pdb
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\PeselUtilities.dll.CodeAnalysisLog.xml
+D:\code\ExcelUtilities\PeselUtilities\bin\Debug\PeselUtilities.dll.lastcodeanalysissucceeded

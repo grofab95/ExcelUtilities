@@ -1,0 +1,15 @@
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe.config
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.dll
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\PeselUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.csproj.CopyComplete
+D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.exe
+D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Spreadsheet.dll
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Spreadsheet.pdb
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe.CodeAnalysisLog.xml
+D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe.lastcodeanalysissucceeded

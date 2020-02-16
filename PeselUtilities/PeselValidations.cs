@@ -20,6 +20,6 @@ namespace PeselUtilities
             {
                 throw new InvalidDaysNumberInMonth(peselFactors.Day, peselFactors.Month, cellLocalization);
             }
-        }
+        }        
     }
 }

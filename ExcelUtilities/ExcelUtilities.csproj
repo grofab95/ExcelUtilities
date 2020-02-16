@@ -45,14 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CellValidations.cs" />
     <Compile Include="Exceptions\Cell_IsNotPesel.cs" />
     <Compile Include="Exceptions\EmptyCell.cs" />
+    <Compile Include="Exceptions\EmptyInput.cs" />
     <Compile Include="Exceptions\ExcelUtilitiesException.cs" />
     <Compile Include="Exceptions\InvalidDaysNumberInMonth.cs" />
+    <Compile Include="Exceptions\InvalidMonthNumber.cs" />
     <Compile Include="Exceptions\InvalidPeselFormat.cs" />
-    <Compile Include="Exceptions\InvalidPeselMonthRange.cs" />
     <Compile Include="Exceptions\InvalidYearRange.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserInputValidations.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

@@ -14,8 +14,7 @@ namespace ExcelUtilities.Spreadsheet
 
         public Excel(ExcelFileFactors excelFile)
         {
-            //var fullPath = excelFile.Path + "\\" + excelFile.FileName;
-            var fullPath = $"{excelFile.Path}\\{excelFile.FileName}.xlsx";
+            var fullPath = $"{excelFile.ExcelPath}\\{excelFile.ExcelName}.xlsx";
             _excelFile = excelFile;
             _workbook = _excel.Workbooks.Open(fullPath);
             _worksheet = _workbook.Worksheets[1];
@@ -23,7 +22,7 @@ namespace ExcelUtilities.Spreadsheet
         
         public string ReadCell(string cellLocString)
         {
-            var cellLoc = ExcelCell.Translate(cellLocString);
+            var cellLoc = ExcelCell.TranslateFromString(cellLocString);
             return ReadCell(cellLoc.X, cellLoc.Y);
         }
 
@@ -34,23 +33,35 @@ namespace ExcelUtilities.Spreadsheet
                 : String.Empty;
         }
 
+        private bool IsPeselCorrect(string pesel)
+        {
+            var peselFactors = PeselNumberTranslator.ExtractPeselFactors(pesel);
+            return
+                CellValidations.ValidateCell(pesel) &&
+                new PeselSimpleValidations(peselFactors).IsBornDateCorrect();
+
+        }
+
         public Dictionary<int, Pesel> GetPesele(string firstCell, Pesel pesel)
         {
-            var cellLoc = ExcelCell.Translate(firstCell);
+            var cellLoc = ExcelCell.TranslateFromString(firstCell);
             var pesele = new Dictionary<int, Pesel>();
             var index = 1; 
             var x = cellLoc.X;
-            while (ReadCell(x, cellLoc.Y) != String.Empty)
+            while (ReadCell(x, cellLoc.Y) != string.Empty && IsPeselCorrect(ReadCell(x, cellLoc.Y)))
             {
-                var qqq = new Pesel(ReadCell(x, cellLoc.Y), "Z0");
-                pesele.Add(index, new Pesel(ReadCell(x, cellLoc.Y), "Z0"));                
+                pesele.Add(index, new Pesel(
+                    ReadCell(x, cellLoc.Y), ExcelCell.TranslateFromXY(cellLoc.Y, x)));                
                 index++;
                 x++;
             }
-            int yyy = x;
             return pesele;
         }
 
-        public void Dispose() => _workbook.Close();
+        public void Dispose() 
+        {
+            _workbook.Close();
+            _excel.Quit();
+        }
     }
 }

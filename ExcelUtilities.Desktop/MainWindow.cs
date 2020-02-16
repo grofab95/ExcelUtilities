@@ -9,24 +9,24 @@ namespace ExcelUtilities.Desktop
 {
     public partial class MainWindow : Form
     {
-        private ExcelFileFactors _excelFile;
-        private Dictionary<int, Pesel> _pesele;
+        private MainWindowFactors MainWindowFactors = new MainWindowFactors();
 
         public MainWindow()
         {
             InitializeComponent();
             ComponentReset();
             WindowComponentConfig();
+            MainWindowFactors.ColumnFactors = new ColumnFactors();           
         }
 
         private void WindowComponentConfig()
         {
             GB_CellLocation.Enabled = false;
-            TB_FilePath.Text = $"C:\\Users\\Fabian\\Desktop";
-            TB_FileName.Text = "test";
+            TB_ExcelPath.Text = $"C:\\Users\\Fabian\\Desktop";
+            TB_ExcelName.Text = "test";
             GB_Pesele.Visible = false;
             GB_FileSummary.Visible = false;
-            Button_Show.Enabled = false;
+            BUTTON_ShowPesele.Enabled = false;
             panel1.AutoScroll = false;
             panel1.HorizontalScroll.Enabled = false;
             panel1.HorizontalScroll.Visible = false;
@@ -37,32 +37,27 @@ namespace ExcelUtilities.Desktop
         private void ComponentReset()
         {
             Label_Cell.Text = String.Empty;
-            Label_FileName.Text = String.Empty;
-            Label_FirstCell.Text = String.Empty;
-            Label_PeselAmount.Text = String.Empty;
-            Label_Localization.Text = String.Empty;
-            Label_FirstPesel.Text = String.Empty;
-            Label_PeselAmount.Text = String.Empty;
-            Label_PESELE.Text = String.Empty;
+            LABEL_ExcelName.Text = String.Empty;
+            LABEL_FirstCell.Text = String.Empty;
+            LABEL_PeselAmount.Text = String.Empty;
+            LABEL_Localization.Text = String.Empty;
+            LABEL_FirstPesel.Text = String.Empty;
+            LABEL_PeselAmount.Text = String.Empty;
+            LABEL_Pesele.Text = String.Empty;
         }
 
-        private void UpdateSummary(ExcelFileFactors excelFile)
+        private void UpdateSummary()
         {
-            Label_Localization.Text = excelFile.Path;
-            Label_FileName.Text = excelFile.FileName;
-        }
-
-        private void UpdateSummary(ColumnFactors columnFactors)
-        {
-            Label_FirstCell.Text = columnFactors.FirstPeselCell.ToUpper();
-            Label_FirstPesel.Text = columnFactors.FirstPesel.ToString();
-            Label_PeselAmount.Text = columnFactors.PeselAmount.ToString();
+            LABEL_Localization.Text = MainWindowFactors.ExcelFileFactors.ExcelPath;
+            LABEL_ExcelName.Text = MainWindowFactors.ExcelFileFactors.ExcelName;
+            LABEL_FirstCell.Text = MainWindowFactors.ColumnFactors.FirstPeselString;
+            LABEL_PeselAmount.Text = MainWindowFactors.ColumnFactors.PeselAmount.ToString();
         }
 
         private void PrintPesele()
         {
             var summary = string.Empty;
-            foreach (var pesel in _pesele)
+            foreach (var pesel in MainWindowFactors.Pesele)
             {
                 if (pesel.Key < 10)
                 {
@@ -75,22 +70,22 @@ namespace ExcelUtilities.Desktop
                         $"{pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BornDate}{Environment.NewLine}";
                 }
             }
-            Label_PESELE.Text = summary;
+            LABEL_Pesele.Text = summary;
         }
 
         private void Button_OpenFile_Click(object sender, EventArgs e)
         {            
             try
             {
-                //Validators.IsInputEmpty(TB_FilePath.Text);
-                //Validators.IsInputEmpty(TB_FileName.Text);
-                _excelFile = new ExcelFileFactors
+                UserInputValidations.IsInputEmpty(TB_ExcelPath.Text);
+                UserInputValidations.IsInputEmpty(TB_ExcelName.Text);
+                MainWindowFactors.ExcelFileFactors = new ExcelFileFactors
                 {
-                    Path = TB_FilePath.Text,
-                    FileName = TB_FileName.Text
+                    ExcelPath = TB_ExcelPath.Text,
+                    ExcelName = TB_ExcelName.Text
                 };
-                using (var _excel = new Excel(_excelFile)) { }
-                UpdateSummary(_excelFile);
+                using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors)) { }
+                UpdateSummary();
                 GB_Excel.Enabled = false;
                 GB_CellLocation.Enabled = true;
                 GB_FileSummary.Visible = true;
@@ -104,20 +99,20 @@ namespace ExcelUtilities.Desktop
         private void Button_SearchCell_Click(object sender, EventArgs e)
         {            
             try
-            {                
-                //Validators.IsInputEmpty(TB_FirstCell.Text);
-                using (var _excel = new Excel(_excelFile))
+            {
+                UserInputValidations.IsInputEmpty(TB_FirstCell.Text);
+                using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors))
                 {
-                    var pesel = new Pesel(_excel.ReadCell(TB_FirstCell.Text), TB_FirstCell.Text);
-                    _pesele = _excel.GetPesele(TB_FirstCell.Text, pesel);
-                    var columnFactors = new ColumnFactors()
+                    MainWindowFactors.Pesel = new Pesel(_excel.ReadCell(TB_FirstCell.Text), TB_FirstCell.Text);
+                    MainWindowFactors.Pesele = _excel.GetPesele(TB_FirstCell.Text, MainWindowFactors.Pesel);
+                    MainWindowFactors.ColumnFactors = new ColumnFactors()
                     {
-                        FirstPesel = _pesele.Single(x => x.Key == 1).Value.InNumber,
+                        FirstPesel = MainWindowFactors.Pesele.Single(x => x.Key == 1).Value.InNumber,
                         FirstPeselCell = TB_FirstCell.Text,
-                        PeselAmount = _pesele.Count()
+                        PeselAmount = MainWindowFactors.Pesele.Count()
                     };
-                    UpdateSummary(columnFactors);
-                    Button_Show.Enabled = true;
+                    UpdateSummary();
+                    BUTTON_ShowPesele.Enabled = true;
                 }
             }
             catch (Exception ex)

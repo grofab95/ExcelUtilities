@@ -41,12 +41,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Enums\ReturnTypeWhenStWrong.cs" />
     <Compile Include="Enums\PeselYearRangesNames.cs" />
     <Compile Include="Helpers\MonthConfig.cs" />
     <Compile Include="Pesel.cs" />
     <Compile Include="PeselFactors.cs" />
     <Compile Include="PeselMonthConfig.cs" />
     <Compile Include="PeselMonthTranslator.cs" />
+    <Compile Include="PeselNumberTranslator.cs" />
+    <Compile Include="PeselSimpleValidations.cs" />
     <Compile Include="PeselValidations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

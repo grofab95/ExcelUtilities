@@ -5,6 +5,7 @@ C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilit
 C:\Users\Fabian\source\repos\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.pdb
 D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll
 D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.pdb
-D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.csprojAssemblyReference.cache
 D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.dll
 D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.pdb
+D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll.CodeAnalysisLog.xml
+D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll.lastcodeanalysissucceeded

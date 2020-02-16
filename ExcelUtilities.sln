@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelUtilities.Spreadsheet"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{0EDDB152-A15B-4414-B7DB-74003D46BAE5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExcelUtilities.Console", "ExcelUtilities.Console\ExcelUtilities.Console.csproj", "{4DD646AB-6BF4-4359-880D-2B4FA6980751}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -35,6 +37,10 @@ Global
 		{5C8677F2-0EE6-4CFF-ADE9-EEAF08FCA0D9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5C8677F2-0EE6-4CFF-ADE9-EEAF08FCA0D9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5C8677F2-0EE6-4CFF-ADE9-EEAF08FCA0D9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4DD646AB-6BF4-4359-880D-2B4FA6980751}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4DD646AB-6BF4-4359-880D-2B4FA6980751}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4DD646AB-6BF4-4359-880D-2B4FA6980751}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4DD646AB-6BF4-4359-880D-2B4FA6980751}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -44,6 +50,7 @@ Global
 		{8BEB2639-84B5-468D-B540-31A20967DC4D} = {0EDDB152-A15B-4414-B7DB-74003D46BAE5}
 		{C021ED54-A668-4E72-B557-3629FCA3666C} = {0EDDB152-A15B-4414-B7DB-74003D46BAE5}
 		{5C8677F2-0EE6-4CFF-ADE9-EEAF08FCA0D9} = {0EDDB152-A15B-4414-B7DB-74003D46BAE5}
+		{4DD646AB-6BF4-4359-880D-2B4FA6980751} = {0EDDB152-A15B-4414-B7DB-74003D46BAE5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {FA57E9C1-EF75-4440-9F77-482886AFC4A5}

@@ -1,15 +1,17 @@
-﻿using PeselUtilities.Enums;
-using System;
+﻿using ExcelUtilities.Exceptions;
+using PeselUtilities.Enums;
 
 namespace PeselUtilities
 {
     public class PeselMonthTranslator
     {
         private PeselFactors _peselFactors;
-        
-        public PeselMonthTranslator(PeselFactors peselFactors)
+        private ReturnTypeWhenStWrong _returnTypeWhenStWrong;
+
+        public PeselMonthTranslator(PeselFactors peselFactors, ReturnTypeWhenStWrong returnTypeWhenStWrong)
         {
             _peselFactors = peselFactors;
+            _returnTypeWhenStWrong = returnTypeWhenStWrong;
             ChangePeselFactors();
         }
 
@@ -33,7 +35,14 @@ namespace PeselUtilities
                 return PeselYearRangesNames.YearInRange2000And2099;
             }
 
-            throw new Exception();
+            if (_returnTypeWhenStWrong == ReturnTypeWhenStWrong.Enum)
+            {
+                return PeselYearRangesNames.Invalid;
+            } 
+            else
+            {                
+                throw new InvalidMonthNumber(_peselFactors.Month, _peselFactors.Year);
+            }
         }
 
         private void ChangePeselFactors()
@@ -54,6 +63,9 @@ namespace PeselUtilities
                         PeselMonthConfig.GetCorrectMonth(
                             _peselFactors.Month, PeselYearRangesNames.YearInRange2000And2099);
                     _peselFactors.Year = int.Parse("20" + _peselFactors.Year.ToString());
+                    break;
+                case PeselYearRangesNames.Invalid:
+                    _peselFactors.Month = 13;
                     break;
             }
         }
