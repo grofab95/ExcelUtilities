@@ -47,6 +47,7 @@
   <ItemGroup>
     <Compile Include="CellFactors.cs" />
     <Compile Include="ColumnFactors.cs" />
+    <Compile Include="Enums\ExcelFileExtension.cs" />
     <Compile Include="Excel.cs" />
     <Compile Include="ExcelCell.cs" />
     <Compile Include="ExcelFileFactors.cs" />

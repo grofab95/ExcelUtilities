@@ -4,5 +4,6 @@
     {
         public string ExcelPath { get; set; }
         public string ExcelName { get; set; }
+        public string ExcelFileExtension { get; set; }
     }
 }

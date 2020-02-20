@@ -7,5 +7,4 @@ D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll
 D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.pdb
 D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.dll
 D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.pdb
-D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll.CodeAnalysisLog.xml
-D:\code\ExcelUtilities\ExcelUtilities\bin\Debug\ExcelUtilities.dll.lastcodeanalysissucceeded
+D:\code\ExcelUtilities\ExcelUtilities\obj\Debug\ExcelUtilities.csprojAssemblyReference.cache

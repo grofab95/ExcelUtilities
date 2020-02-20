@@ -26,21 +26,30 @@ namespace ExcelUtilities.Console
         {
             try
             {
-                //var nrPesel = 14201206696.ToString();
-                //var pesel = new Pesel(nrPesel, "D1");
-                //PrintSummary(pesel);
-                //System.Console.ReadKey();
                 var excelfileFactors = new ExcelFileFactors
                 {
                     ExcelPath = "C:\\Users\\Fabian\\Desktop",
                     ExcelName = "test"
                 };
 
-                //using (var excel = new Excel(excelfileFactors))
-                //{
-                //    System.Console.WriteLine(excel.ReadCell("C1"));
-                //}
-                System.Console.WriteLine(ExcelCell.TranslateFromXY(3,2));
+                var cellLoc = new CellFactors
+                {
+                    X = 2,
+                    Y = 3,
+                };
+                var cellLoc2 = new CellFactors
+                {
+                    X = 10,
+                    Y = 3,
+                };
+
+                using (var excel = new Excel(excelfileFactors))
+                {
+                    excel.UpdateCell(cellLoc, "WWW");
+                    excel.UpdateCell(cellLoc2, "RRR");
+                    excel.Save();
+                }
+                System.Console.WriteLine();
                 System.Console.ReadKey();
             }
             catch(Exception ex)
