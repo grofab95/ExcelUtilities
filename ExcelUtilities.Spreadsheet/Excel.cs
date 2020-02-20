@@ -11,12 +11,13 @@ namespace ExcelUtilities.Spreadsheet
         private _Application _excel = new Application();
         private Workbook _workbook;
         private Worksheet _worksheet;
+        private string _fullExcxelPath;
 
         public Excel(ExcelFileFactors excelFile)
         {
-            var fullPath = $"{excelFile.ExcelPath}\\{excelFile.ExcelName}.xlsx";
+            _fullExcxelPath = $"{excelFile.ExcelPath}\\{excelFile.ExcelName}.{excelFile.ExcelFileExtension}";
             _excelFile = excelFile;
-            _workbook = _excel.Workbooks.Open(fullPath);
+            _workbook = _excel.Workbooks.Open(_fullExcxelPath);
             _worksheet = _workbook.Worksheets[1];
         }
         
@@ -42,6 +43,20 @@ namespace ExcelUtilities.Spreadsheet
 
         }
 
+        public Dictionary<int,T> ReadColumn<T>(string firstColumnCell, string lastColumnCell)
+        {
+            var columnContents = new Dictionary<int, T>();
+            var firstColumnCellLocation = ExcelCell.TranslateFromString(firstColumnCell);
+            var actualCellLocation = firstColumnCellLocation;
+            var index = 1;
+            while (true)
+            {
+                //columnContents.Add(index, T);
+                index++;
+            }
+            throw new NotImplementedException();
+        }
+
         public Dictionary<int, Pesel> GetPesele(string firstCell, Pesel pesel)
         {
             var cellLoc = ExcelCell.TranslateFromString(firstCell);
@@ -56,6 +71,36 @@ namespace ExcelUtilities.Spreadsheet
                 x++;
             }
             return pesele;
+        }
+
+        public void UpdateCell(CellFactors cellLocalization, string value)
+        {
+            var row = _worksheet.Rows.Cells[cellLocalization.X, cellLocalization.Y];
+            row.Value = value;
+        }
+
+        public void UpdateColumn(string firstColumnCell, Dictionary<int, Pesel> pesele)
+        {
+            var FirstCellLoc = ExcelCell.TranslateFromString(firstColumnCell);
+            var actualX = FirstCellLoc.X;
+            var actualY = FirstCellLoc.Y;
+            foreach (var pesel in pesele)
+            {
+                UpdateCell(new CellFactors { X = actualX, Y = actualY }, pesel.Value.BornDate.ToString("dd/MM/yyyy"));
+                actualX++;
+            }
+        }
+
+        public void Save()
+        {
+            _excel.Application.ActiveWorkbook.Save();
+        }
+
+        public void SaveAs()
+        {
+            _excel.Application.ActiveWorkbook.SaveAs(_excelFile.ExcelPath + "\\" + _excelFile.ExcelName + "DatyUrodzenia", Microsoft.Office.Interop.Excel.XlFileFormat.xlWorkbookDefault, Type.Missing, Type.Missing,
+            false, false, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlNoChange,
+            Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
         }
 
         public void Dispose() 

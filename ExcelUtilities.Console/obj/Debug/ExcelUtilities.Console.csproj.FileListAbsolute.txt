@@ -11,5 +11,3 @@ D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.e
 D:\code\ExcelUtilities\ExcelUtilities.Console\obj\Debug\ExcelUtilities.Console.pdb
 D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Spreadsheet.dll
 D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Spreadsheet.pdb
-D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe.CodeAnalysisLog.xml
-D:\code\ExcelUtilities\ExcelUtilities.Console\bin\Debug\ExcelUtilities.Console.exe.lastcodeanalysissucceeded

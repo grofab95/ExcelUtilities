@@ -12,16 +12,16 @@ namespace PeselUtilities
 
         public Pesel(string inString, string cellLocalization)
         {
-            InString = inString;
-            InNumber = long.Parse(inString);
+            InString = inString;                      
             CellLocalization = cellLocalization;
             PeselValidations.ValidatePeselLengthInCell(InString, CellLocalization);
             PeselFactors = 
                 new PeselMonthTranslator(
-                    PeselNumberTranslator.ExtractPeselFactors(InString), Enums.ReturnTypeWhenStWrong.Exception)
+                    PeselNumberTranslator.ExtractPeselFactors(InString), Enums.ReturnTypeWhenStWrong.Exception, cellLocalization)
                         .GetCorrectPeselFactors();
             PeselValidations.ValidateMonthLenghtByYear(PeselFactors, CellLocalization);
             BornDate = GetBornDateFromPesel();
+            InNumber = long.Parse(inString);
         }
 
         private DateTime GetBornDateFromPesel()     

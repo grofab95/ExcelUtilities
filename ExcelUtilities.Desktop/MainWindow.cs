@@ -1,7 +1,8 @@
 ﻿using ExcelUtilities.Spreadsheet;
+using ExcelUtilities.Spreadsheet.Enums;
+using ExcelUtilities.Validators;
 using PeselUtilities;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Windows.Forms;
 
@@ -16,6 +17,7 @@ namespace ExcelUtilities.Desktop
             InitializeComponent();
             ComponentReset();
             WindowComponentConfig();
+            FillExcelFileExtensioncomboBox();
             MainWindowFactors.ColumnFactors = new ColumnFactors();           
         }
 
@@ -27,6 +29,7 @@ namespace ExcelUtilities.Desktop
             GB_Pesele.Visible = false;
             GB_FileSummary.Visible = false;
             BUTTON_ShowPesele.Enabled = false;
+            BUTTON_WriteBornDatesToExcel.Visible = false;
             panel1.AutoScroll = false;
             panel1.HorizontalScroll.Enabled = false;
             panel1.HorizontalScroll.Visible = false;
@@ -46,12 +49,23 @@ namespace ExcelUtilities.Desktop
             LABEL_Pesele.Text = String.Empty;
         }
 
+        private void FillExcelFileExtensioncomboBox()
+        {
+            CB_excelFileExtensions.DataSource = Enum.GetValues(typeof(ExcelFileExtension));
+
+        }
+
         private void UpdateSummary()
         {
             LABEL_Localization.Text = MainWindowFactors.ExcelFileFactors.ExcelPath;
-            LABEL_ExcelName.Text = MainWindowFactors.ExcelFileFactors.ExcelName;
-            LABEL_FirstCell.Text = MainWindowFactors.ColumnFactors.FirstPeselString;
-            LABEL_PeselAmount.Text = MainWindowFactors.ColumnFactors.PeselAmount.ToString();
+            LABEL_ExcelName.Text = MainWindowFactors.ExcelFileFactors.ExcelName + "." + 
+                MainWindowFactors.ExcelFileFactors.ExcelFileExtension;
+            if (MainWindowFactors.Pesel != null)
+            {
+                LABEL_FirstPesel.Text = MainWindowFactors.Pesel.InString;
+                LABEL_FirstCell.Text = MainWindowFactors.Pesel.CellLocalization.ToUpper();
+                LABEL_PeselAmount.Text = MainWindowFactors.ColumnFactors.PeselAmount.ToString();
+            }            
         }
 
         private void PrintPesele()
@@ -62,12 +76,12 @@ namespace ExcelUtilities.Desktop
                 if (pesel.Key < 10)
                 {
                     summary += 
-                        $"  {pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BornDate}{Environment.NewLine}";
+                        $"[{pesel.Value.CellLocalization.ToUpper()}] -> {pesel.Value.InString} ->  {pesel.Value.BornDate.ToString("dd/MM/yyyy")}{Environment.NewLine}";
                 }
                 else
                 {
                     summary += 
-                        $"{pesel.Key}. ->  {pesel.Value.InString} ->  {pesel.Value.BornDate}{Environment.NewLine}";
+                        $"[{pesel.Value.CellLocalization.ToUpper()}] -> {pesel.Value.InString} ->  {pesel.Value.BornDate.ToString("dd/MM/yyyy")}{Environment.NewLine}";
                 }
             }
             LABEL_Pesele.Text = summary;
@@ -77,13 +91,14 @@ namespace ExcelUtilities.Desktop
         {            
             try
             {
-                UserInputValidations.IsInputEmpty(TB_ExcelPath.Text);
-                UserInputValidations.IsInputEmpty(TB_ExcelName.Text);
+                UserInputValidations.EmptyInput(TB_ExcelPath.Text);
+                UserInputValidations.EmptyInput(TB_ExcelName.Text);
                 MainWindowFactors.ExcelFileFactors = new ExcelFileFactors
                 {
                     ExcelPath = TB_ExcelPath.Text,
-                    ExcelName = TB_ExcelName.Text
-                };
+                    ExcelName = TB_ExcelName.Text,
+                    ExcelFileExtension = CB_excelFileExtensions.SelectedItem.ToString()
+            };
                 using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors)) { }
                 UpdateSummary();
                 GB_Excel.Enabled = false;
@@ -100,9 +115,10 @@ namespace ExcelUtilities.Desktop
         {            
             try
             {
-                UserInputValidations.IsInputEmpty(TB_FirstCell.Text);
+                UserInputValidations.EmptyInput(TB_FirstCell.Text);
                 using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors))
                 {
+                    SpreadsheetValidations.EmptyCell(_excel.ReadCell(TB_FirstCell.Text), TB_FirstCell.Text);
                     MainWindowFactors.Pesel = new Pesel(_excel.ReadCell(TB_FirstCell.Text), TB_FirstCell.Text);
                     MainWindowFactors.Pesele = _excel.GetPesele(TB_FirstCell.Text, MainWindowFactors.Pesel);
                     MainWindowFactors.ColumnFactors = new ColumnFactors()
@@ -121,30 +137,42 @@ namespace ExcelUtilities.Desktop
             }
         }
 
-        private void Button_Change_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                //PrintBirthDates();
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message, "Uwaga!");
-            }
-
-        }
-
         private void Button_Show_Click(object sender, EventArgs e)
         {
             try
             {
                 GB_Pesele.Visible = true;
                 PrintPesele();
+                BUTTON_WriteBornDatesToExcel.Visible = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Uwaga!");
             }
+        }
+
+        private void BUTTON_WriteBornDatesToExcel_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using (var _excel = new Excel(MainWindowFactors.ExcelFileFactors))
+                {
+                    _excel.UpdateColumn(MainWindowFactors.ColumnFactors.FirstPeselCell, MainWindowFactors.Pesele);
+                    _excel.SaveAs();
+                    ShowInfoBox();
+                    Application.Restart();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message, "Uwaga!");
+            }
+        }
+
+        private void ShowInfoBox()
+        {
+            var infoMessage = $"Pomyślnie zaktualizowano wierszy: {MainWindowFactors.Pesele.Count()}.";
+            MessageBox.Show(infoMessage, "Informacja", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
