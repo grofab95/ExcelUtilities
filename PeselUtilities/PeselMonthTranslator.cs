@@ -7,6 +7,15 @@ namespace PeselUtilities
     {
         private PeselFactors _peselFactors;
         private ReturnTypeWhenStWrong _returnTypeWhenStWrong;
+        private string _peselLocalization;
+
+        public PeselMonthTranslator(PeselFactors peselFactors, ReturnTypeWhenStWrong returnTypeWhenStWrong, string peselLocalization)
+        {
+            _peselFactors = peselFactors;
+            _returnTypeWhenStWrong = returnTypeWhenStWrong;
+            _peselLocalization = peselLocalization;
+            ChangePeselFactors();
+        }
 
         public PeselMonthTranslator(PeselFactors peselFactors, ReturnTypeWhenStWrong returnTypeWhenStWrong)
         {
@@ -41,7 +50,7 @@ namespace PeselUtilities
             } 
             else
             {                
-                throw new InvalidMonthNumber(_peselFactors.Month, _peselFactors.Year);
+                throw new InvalidMonthNumber(_peselFactors.Month, _peselFactors.Year, _peselLocalization );
             }
         }
 

@@ -35,7 +35,6 @@
             this.TB_ExcelPath = new System.Windows.Forms.TextBox();
             this.TB_ExcelName = new System.Windows.Forms.TextBox();
             this.GB_Excel = new System.Windows.Forms.GroupBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.GB_CellLocation = new System.Windows.Forms.GroupBox();
             this.BUTTON_SearchCell = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -57,6 +56,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.GB_Pesele = new System.Windows.Forms.GroupBox();
             this.BUTTON_WriteBornDatesToExcel = new System.Windows.Forms.Button();
+            this.CB_excelFileExtensions = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.GB_Excel.SuspendLayout();
             this.GB_CellLocation.SuspendLayout();
             this.GB_FileSummary.SuspendLayout();
@@ -109,19 +110,20 @@
             // 
             this.TB_ExcelPath.Location = new System.Drawing.Point(142, 34);
             this.TB_ExcelPath.Name = "TB_ExcelPath";
-            this.TB_ExcelPath.Size = new System.Drawing.Size(246, 22);
+            this.TB_ExcelPath.Size = new System.Drawing.Size(261, 22);
             this.TB_ExcelPath.TabIndex = 4;
             // 
             // TB_ExcelName
             // 
             this.TB_ExcelName.Location = new System.Drawing.Point(142, 67);
             this.TB_ExcelName.Name = "TB_ExcelName";
-            this.TB_ExcelName.Size = new System.Drawing.Size(207, 22);
+            this.TB_ExcelName.Size = new System.Drawing.Size(177, 22);
             this.TB_ExcelName.TabIndex = 5;
             // 
             // GB_Excel
             // 
             this.GB_Excel.Controls.Add(this.label1);
+            this.GB_Excel.Controls.Add(this.CB_excelFileExtensions);
             this.GB_Excel.Controls.Add(this.Label_Path);
             this.GB_Excel.Controls.Add(this.TB_ExcelName);
             this.GB_Excel.Controls.Add(this.BUTTON_OpenExcel);
@@ -130,20 +132,10 @@
             this.GB_Excel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GB_Excel.Location = new System.Drawing.Point(12, 80);
             this.GB_Excel.Name = "GB_Excel";
-            this.GB_Excel.Size = new System.Drawing.Size(409, 162);
+            this.GB_Excel.Size = new System.Drawing.Size(419, 162);
             this.GB_Excel.TabIndex = 6;
             this.GB_Excel.TabStop = false;
             this.GB_Excel.Text = "1. Wskaż lokalizację i nazwę arkusza";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label1.Location = new System.Drawing.Point(350, 67);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(38, 20);
-            this.label1.TabIndex = 6;
-            this.label1.Text = ".xlsx";
             // 
             // GB_CellLocation
             // 
@@ -154,7 +146,7 @@
             this.GB_CellLocation.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.GB_CellLocation.Location = new System.Drawing.Point(12, 260);
             this.GB_CellLocation.Name = "GB_CellLocation";
-            this.GB_CellLocation.Size = new System.Drawing.Size(409, 123);
+            this.GB_CellLocation.Size = new System.Drawing.Size(419, 123);
             this.GB_CellLocation.TabIndex = 7;
             this.GB_CellLocation.TabStop = false;
             this.GB_CellLocation.Text = "2. Wskaż pierwszą komórkę kolumny zawierającej PESEL";
@@ -214,7 +206,7 @@
             this.GB_FileSummary.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
             this.GB_FileSummary.Location = new System.Drawing.Point(12, 389);
             this.GB_FileSummary.Name = "GB_FileSummary";
-            this.GB_FileSummary.Size = new System.Drawing.Size(409, 258);
+            this.GB_FileSummary.Size = new System.Drawing.Size(419, 258);
             this.GB_FileSummary.TabIndex = 8;
             this.GB_FileSummary.TabStop = false;
             this.GB_FileSummary.Text = "Właściwości arkusza";
@@ -342,16 +334,16 @@
             this.panel1.Controls.Add(this.LABEL_Pesele);
             this.panel1.Location = new System.Drawing.Point(7, 21);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(368, 540);
+            this.panel1.Size = new System.Drawing.Size(371, 540);
             this.panel1.TabIndex = 12;
             // 
             // GB_Pesele
             // 
             this.GB_Pesele.Controls.Add(this.panel1);
             this.GB_Pesele.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F);
-            this.GB_Pesele.Location = new System.Drawing.Point(437, 80);
+            this.GB_Pesele.Location = new System.Drawing.Point(442, 80);
             this.GB_Pesele.Name = "GB_Pesele";
-            this.GB_Pesele.Size = new System.Drawing.Size(381, 567);
+            this.GB_Pesele.Size = new System.Drawing.Size(384, 567);
             this.GB_Pesele.TabIndex = 11;
             this.GB_Pesele.TabStop = false;
             this.GB_Pesele.Text = "Pesele";
@@ -359,7 +351,7 @@
             // BUTTON_WriteBornDatesToExcel
             // 
             this.BUTTON_WriteBornDatesToExcel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.BUTTON_WriteBornDatesToExcel.Location = new System.Drawing.Point(631, 24);
+            this.BUTTON_WriteBornDatesToExcel.Location = new System.Drawing.Point(636, 24);
             this.BUTTON_WriteBornDatesToExcel.Name = "BUTTON_WriteBornDatesToExcel";
             this.BUTTON_WriteBornDatesToExcel.Size = new System.Drawing.Size(190, 50);
             this.BUTTON_WriteBornDatesToExcel.TabIndex = 11;
@@ -367,13 +359,31 @@
             this.BUTTON_WriteBornDatesToExcel.UseVisualStyleBackColor = true;
             this.BUTTON_WriteBornDatesToExcel.Click += new System.EventHandler(this.BUTTON_WriteBornDatesToExcel_Click);
             // 
+            // CB_excelFileExtensions
+            // 
+            this.CB_excelFileExtensions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_excelFileExtensions.FormattingEnabled = true;
+            this.CB_excelFileExtensions.Location = new System.Drawing.Point(339, 65);
+            this.CB_excelFileExtensions.Name = "CB_excelFileExtensions";
+            this.CB_excelFileExtensions.Size = new System.Drawing.Size(64, 24);
+            this.CB_excelFileExtensions.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(322, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = ".";
+            // 
             // MainWindow
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(833, 658);
+            this.ClientSize = new System.Drawing.Size(846, 658);
             this.Controls.Add(this.BUTTON_WriteBornDatesToExcel);
             this.Controls.Add(this.GB_Pesele);
             this.Controls.Add(this.GB_FileSummary);
@@ -426,8 +436,9 @@
         private System.Windows.Forms.Button BUTTON_ShowPesele;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.GroupBox GB_Pesele;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button BUTTON_WriteBornDatesToExcel;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox CB_excelFileExtensions;
     }
 }
 

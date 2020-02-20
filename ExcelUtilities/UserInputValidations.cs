@@ -4,7 +4,7 @@ namespace ExcelUtilities
 {
     public class UserInputValidations
     {
-        public static void IsInputEmpty(string input)
+        public static void EmptyInput(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
             {

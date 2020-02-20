@@ -11,12 +11,13 @@ namespace ExcelUtilities.Spreadsheet
         private _Application _excel = new Application();
         private Workbook _workbook;
         private Worksheet _worksheet;
+        private string _fullExcxelPath;
 
         public Excel(ExcelFileFactors excelFile)
         {
-            var fullPath = $"{excelFile.ExcelPath}\\{excelFile.ExcelName}.xlsx";
+            _fullExcxelPath = $"{excelFile.ExcelPath}\\{excelFile.ExcelName}.{excelFile.ExcelFileExtension}";
             _excelFile = excelFile;
-            _workbook = _excel.Workbooks.Open(fullPath);
+            _workbook = _excel.Workbooks.Open(_fullExcxelPath);
             _worksheet = _workbook.Worksheets[1];
         }
         
@@ -85,7 +86,7 @@ namespace ExcelUtilities.Spreadsheet
             var actualY = FirstCellLoc.Y;
             foreach (var pesel in pesele)
             {
-                UpdateCell(new CellFactors { X = actualX, Y = actualY }, pesel.Value.BornDate.ToString());
+                UpdateCell(new CellFactors { X = actualX, Y = actualY }, pesel.Value.BornDate.ToString("dd/MM/yyyy"));
                 actualX++;
             }
         }

@@ -1,4 +1,6 @@
-﻿namespace ExcelUtilities.Exceptions
+﻿using System;
+
+namespace ExcelUtilities.Exceptions
 {
     public class InvalidPeselFormat : ExcelUtilitiesException
     {
@@ -10,8 +12,9 @@
             base($"Pesel: {pesel} jest nieprawdiłowy.")
         {   }
 
-        public InvalidPeselFormat(string pesel, string cellLocalization) :
-            base($"Pesel: {pesel} w komórce: [{cellLocalization.ToUpper()}] jest nieprawdiłowy.")
+        public InvalidPeselFormat(string input, string cellLocalization) :
+            base($"Komórka: [{cellLocalization.ToUpper()}] nie zawiera peselu," +
+                $"{Environment.NewLine}zawartość komórki: {input}")
         {   }
     }
 }
