@@ -1,0 +1,4 @@
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\PeselUtilities.Tests\bin\Debug\PeselUtilities.Tests.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities.Tests\Debug\PeselUtilities.Tests.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities.Tests\Debug\PeselUtilities.Tests.csproj.CopyComplete
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities.Tests\Debug\PeselUtilities.Tests.dll

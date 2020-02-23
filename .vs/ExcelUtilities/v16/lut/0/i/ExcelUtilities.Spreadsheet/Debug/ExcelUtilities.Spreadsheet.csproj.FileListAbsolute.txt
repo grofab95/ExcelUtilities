@@ -1,0 +1,4 @@
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\ExcelUtilities.Spreadsheet\bin\Debug\ExcelUtilities.Spreadsheet.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Spreadsheet\Debug\ExcelUtilities.Spreadsheet.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Spreadsheet\Debug\ExcelUtilities.Spreadsheet.csproj.CopyComplete
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Spreadsheet\Debug\ExcelUtilities.Spreadsheet.dll

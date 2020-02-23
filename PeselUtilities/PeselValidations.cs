@@ -5,9 +5,9 @@ namespace PeselUtilities
 {
     public class PeselValidations
     {
-        public static void ValidatePeselLengthInCell(string peselString, string cellLocalization)
+        public static void ValidatePeselFormat(string peselString, string cellLocalization)
         {
-            if (peselString.Length != 11 || !IsNumber(peselString))
+            if (!IsPeselLengthCorrect(peselString) || !IsNumber(peselString))
             {
                 throw new InvalidPeselFormat(peselString, cellLocalization);
             }
@@ -22,7 +22,12 @@ namespace PeselUtilities
             }
         }
 
-        private static bool IsNumber(string input)
+        public static bool IsPeselLengthCorrect(string peselString)
+        {
+            return (peselString.Length == 11);
+        }        
+
+        public static bool IsNumber(string input)
         {
             return long.TryParse(input, out _);
         }

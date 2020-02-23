@@ -26,30 +26,8 @@ namespace ExcelUtilities.Console
         {
             try
             {
-                var excelfileFactors = new ExcelFileFactors
-                {
-                    ExcelPath = "C:\\Users\\Fabian\\Desktop",
-                    ExcelName = "test"
-                };
-
-                var cellLoc = new CellFactors
-                {
-                    X = 2,
-                    Y = 3,
-                };
-                var cellLoc2 = new CellFactors
-                {
-                    X = 10,
-                    Y = 3,
-                };
-
-                using (var excel = new Excel(excelfileFactors))
-                {
-                    excel.UpdateCell(cellLoc, "WWW");
-                    excel.UpdateCell(cellLoc2, "RRR");
-                    excel.Save();
-                }
-                System.Console.WriteLine();
+                System.Console.WriteLine(PeselNumberTranslator.ExtractOtherPeselNumbers("95072636696"));
+                System.Console.WriteLine("36696".Length);
                 System.Console.ReadKey();
             }
             catch(Exception ex)

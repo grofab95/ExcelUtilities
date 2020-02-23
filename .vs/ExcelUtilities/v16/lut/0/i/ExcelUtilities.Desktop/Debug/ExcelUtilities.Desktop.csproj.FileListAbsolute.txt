@@ -1,0 +1,8 @@
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\ExcelUtilities.Desktop\bin\Debug\ExcelUtilities.Desktop.exe.config
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\ExcelUtilities.Desktop\bin\Debug\ExcelUtilities.Desktop.exe
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.MainWindow.resources
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.Properties.Resources.resources
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.csproj.GenerateResource.cache
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.csproj.CopyComplete
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ExcelUtilities.Desktop\Debug\ExcelUtilities.Desktop.exe

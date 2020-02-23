@@ -58,6 +58,10 @@
       <Project>{fac243a0-01af-4f5f-8494-edd9302e36f2}</Project>
       <Name>ExcelUtilities</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ParsingUtilities\ParsingUtilities.csproj">
+      <Project>{a77e4c46-438a-4e53-a19f-3ba37d9ca569}</Project>
+      <Name>ParsingUtilities</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

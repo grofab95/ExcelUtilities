@@ -1,4 +1,6 @@
-﻿namespace PeselUtilities
+﻿using ParsingUtilities;
+
+namespace PeselUtilities
 {
     public class PeselNumberTranslator
     {
@@ -20,7 +22,7 @@
             {
                 otherPeselNumbersInString += peselString[i];
             }
-            return int.Parse(otherPeselNumbersInString);
+            return StringParser.StringToInt(otherPeselNumbersInString);
         }
     }
 }

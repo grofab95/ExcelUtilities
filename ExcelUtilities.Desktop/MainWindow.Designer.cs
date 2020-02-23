@@ -35,6 +35,8 @@
             this.TB_ExcelPath = new System.Windows.Forms.TextBox();
             this.TB_ExcelName = new System.Windows.Forms.TextBox();
             this.GB_Excel = new System.Windows.Forms.GroupBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.CB_excelFileExtensions = new System.Windows.Forms.ComboBox();
             this.GB_CellLocation = new System.Windows.Forms.GroupBox();
             this.BUTTON_SearchCell = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -56,8 +58,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.GB_Pesele = new System.Windows.Forms.GroupBox();
             this.BUTTON_WriteBornDatesToExcel = new System.Windows.Forms.Button();
-            this.CB_excelFileExtensions = new System.Windows.Forms.ComboBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.GB_Excel.SuspendLayout();
             this.GB_CellLocation.SuspendLayout();
             this.GB_FileSummary.SuspendLayout();
@@ -136,6 +136,24 @@
             this.GB_Excel.TabIndex = 6;
             this.GB_Excel.TabStop = false;
             this.GB_Excel.Text = "1. Wskaż lokalizację i nazwę arkusza";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(322, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(11, 16);
+            this.label1.TabIndex = 7;
+            this.label1.Text = ".";
+            // 
+            // CB_excelFileExtensions
+            // 
+            this.CB_excelFileExtensions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CB_excelFileExtensions.FormattingEnabled = true;
+            this.CB_excelFileExtensions.Location = new System.Drawing.Point(339, 65);
+            this.CB_excelFileExtensions.Name = "CB_excelFileExtensions";
+            this.CB_excelFileExtensions.Size = new System.Drawing.Size(64, 24);
+            this.CB_excelFileExtensions.TabIndex = 6;
             // 
             // GB_CellLocation
             // 
@@ -226,7 +244,7 @@
             // 
             this.LABEL_FirstPesel.AutoSize = true;
             this.LABEL_FirstPesel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LABEL_FirstPesel.Location = new System.Drawing.Point(171, 136);
+            this.LABEL_FirstPesel.Location = new System.Drawing.Point(171, 120);
             this.LABEL_FirstPesel.Name = "LABEL_FirstPesel";
             this.LABEL_FirstPesel.Size = new System.Drawing.Size(63, 16);
             this.LABEL_FirstPesel.TabIndex = 10;
@@ -235,7 +253,7 @@
             // FirstPESEL
             // 
             this.FirstPESEL.AutoSize = true;
-            this.FirstPESEL.Location = new System.Drawing.Point(21, 136);
+            this.FirstPESEL.Location = new System.Drawing.Point(21, 120);
             this.FirstPESEL.Name = "FirstPESEL";
             this.FirstPESEL.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.FirstPESEL.Size = new System.Drawing.Size(110, 16);
@@ -265,7 +283,7 @@
             // 
             this.LABEL_FirstCell.AutoSize = true;
             this.LABEL_FirstCell.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LABEL_FirstCell.Location = new System.Drawing.Point(171, 105);
+            this.LABEL_FirstCell.Location = new System.Drawing.Point(171, 89);
             this.LABEL_FirstCell.Name = "LABEL_FirstCell";
             this.LABEL_FirstCell.Size = new System.Drawing.Size(28, 16);
             this.LABEL_FirstCell.TabIndex = 6;
@@ -275,7 +293,7 @@
             // 
             this.LABEL_PeselAmount.AutoSize = true;
             this.LABEL_PeselAmount.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LABEL_PeselAmount.Location = new System.Drawing.Point(171, 168);
+            this.LABEL_PeselAmount.Location = new System.Drawing.Point(171, 152);
             this.LABEL_PeselAmount.Name = "LABEL_PeselAmount";
             this.LABEL_PeselAmount.Size = new System.Drawing.Size(87, 16);
             this.LABEL_PeselAmount.TabIndex = 5;
@@ -285,7 +303,7 @@
             // 
             this.LABEL_ExcelName.AutoSize = true;
             this.LABEL_ExcelName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            this.LABEL_ExcelName.Location = new System.Drawing.Point(171, 76);
+            this.LABEL_ExcelName.Location = new System.Drawing.Point(171, 60);
             this.LABEL_ExcelName.Name = "LABEL_ExcelName";
             this.LABEL_ExcelName.Size = new System.Drawing.Size(42, 16);
             this.LABEL_ExcelName.TabIndex = 3;
@@ -294,7 +312,7 @@
             // PeselAmount
             // 
             this.PeselAmount.AutoSize = true;
-            this.PeselAmount.Location = new System.Drawing.Point(21, 168);
+            this.PeselAmount.Location = new System.Drawing.Point(21, 152);
             this.PeselAmount.Name = "PeselAmount";
             this.PeselAmount.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.PeselAmount.Size = new System.Drawing.Size(136, 16);
@@ -304,7 +322,7 @@
             // FirstCell
             // 
             this.FirstCell.AutoSize = true;
-            this.FirstCell.Location = new System.Drawing.Point(21, 106);
+            this.FirstCell.Location = new System.Drawing.Point(21, 90);
             this.FirstCell.Name = "FirstCell";
             this.FirstCell.Size = new System.Drawing.Size(121, 16);
             this.FirstCell.TabIndex = 1;
@@ -313,7 +331,7 @@
             // FileName
             // 
             this.FileName.AutoSize = true;
-            this.FileName.Location = new System.Drawing.Point(21, 76);
+            this.FileName.Location = new System.Drawing.Point(21, 60);
             this.FileName.Name = "FileName";
             this.FileName.Size = new System.Drawing.Size(102, 16);
             this.FileName.TabIndex = 0;
@@ -358,24 +376,6 @@
             this.BUTTON_WriteBornDatesToExcel.Text = "Wpisz daty do excela";
             this.BUTTON_WriteBornDatesToExcel.UseVisualStyleBackColor = true;
             this.BUTTON_WriteBornDatesToExcel.Click += new System.EventHandler(this.BUTTON_WriteBornDatesToExcel_Click);
-            // 
-            // CB_excelFileExtensions
-            // 
-            this.CB_excelFileExtensions.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CB_excelFileExtensions.FormattingEnabled = true;
-            this.CB_excelFileExtensions.Location = new System.Drawing.Point(339, 65);
-            this.CB_excelFileExtensions.Name = "CB_excelFileExtensions";
-            this.CB_excelFileExtensions.Size = new System.Drawing.Size(64, 24);
-            this.CB_excelFileExtensions.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(322, 73);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(11, 16);
-            this.label1.TabIndex = 7;
-            this.label1.Text = ".";
             // 
             // MainWindow
             // 

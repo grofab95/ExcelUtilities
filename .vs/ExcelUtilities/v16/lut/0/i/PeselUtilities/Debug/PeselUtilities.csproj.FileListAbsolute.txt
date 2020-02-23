@@ -1,0 +1,4 @@
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\PeselUtilities\bin\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities\Debug\PeselUtilities.csproj.CopyComplete
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities\Debug\PeselUtilities.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\PeselUtilities\Debug\PeselUtilities.csprojAssemblyReference.cache

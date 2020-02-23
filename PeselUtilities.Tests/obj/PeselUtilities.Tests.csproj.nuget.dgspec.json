@@ -1,0 +1,133 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\code\\ExcelUtilities\\PeselUtilities.Tests\\PeselUtilities.Tests.csproj": {}
+  },
+  "projects": {
+    "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj",
+        "projectName": "ExcelUtilities",
+        "projectPath": "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\code\\ExcelUtilities\\ParsingUtilities\\ParsingUtilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\code\\ExcelUtilities\\ParsingUtilities\\ParsingUtilities.csproj",
+        "projectName": "ParsingUtilities",
+        "projectPath": "D:\\code\\ExcelUtilities\\ParsingUtilities\\ParsingUtilities.csproj"
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    },
+    "D:\\code\\ExcelUtilities\\PeselUtilities.Tests\\PeselUtilities.Tests.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\code\\ExcelUtilities\\PeselUtilities.Tests\\PeselUtilities.Tests.csproj",
+        "projectName": "PeselUtilities.Tests",
+        "projectPath": "D:\\code\\ExcelUtilities\\PeselUtilities.Tests\\PeselUtilities.Tests.csproj",
+        "packagesPath": "C:\\Users\\Fabian\\.nuget\\packages\\",
+        "outputPath": "D:\\code\\ExcelUtilities\\PeselUtilities.Tests\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\Fabian\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp3.1"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp3.1": {
+            "projectReferences": {
+              "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj": {
+                "projectPath": "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj"
+              },
+              "D:\\code\\ExcelUtilities\\PeselUtilities\\PeselUtilities.csproj": {
+                "projectPath": "D:\\code\\ExcelUtilities\\PeselUtilities\\PeselUtilities.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp3.1": {
+          "dependencies": {
+            "Microsoft.NET.Test.Sdk": {
+              "target": "Package",
+              "version": "[16.2.0, )"
+            },
+            "coverlet.collector": {
+              "target": "Package",
+              "version": "[1.0.1, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            },
+            "xunit.runner.visualstudio": {
+              "target": "Package",
+              "version": "[2.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "D:\\code\\ExcelUtilities\\PeselUtilities\\PeselUtilities.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\code\\ExcelUtilities\\PeselUtilities\\PeselUtilities.csproj",
+        "projectName": "PeselUtilities",
+        "projectPath": "D:\\code\\ExcelUtilities\\PeselUtilities\\PeselUtilities.csproj",
+        "frameworks": {
+          "net472": {
+            "projectReferences": {
+              "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj": {
+                "projectPath": "D:\\code\\ExcelUtilities\\ExcelUtilities\\ExcelUtilities.csproj"
+              },
+              "D:\\code\\ExcelUtilities\\ParsingUtilities\\ParsingUtilities.csproj": {
+                "projectPath": "D:\\code\\ExcelUtilities\\ParsingUtilities\\ParsingUtilities.csproj"
+              }
+            }
+          }
+        }
+      },
+      "frameworks": {
+        "net472": {}
+      }
+    }
+  }
+}

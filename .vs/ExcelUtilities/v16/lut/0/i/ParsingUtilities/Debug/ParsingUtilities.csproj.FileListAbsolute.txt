@@ -1,0 +1,4 @@
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ParsingUtilities\Debug\ParsingUtilities.csproj.CopyComplete
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\b\ParsingUtilities\bin\Debug\ParsingUtilities.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ParsingUtilities\Debug\ParsingUtilities.dll
+D:\code\ExcelUtilities\.vs\ExcelUtilities\v16\lut\0\i\ParsingUtilities\Debug\ParsingUtilities.csprojAssemblyReference.cache

@@ -14,7 +14,7 @@ namespace PeselUtilities
         {
             InString = inString;                      
             CellLocalization = cellLocalization;
-            PeselValidations.ValidatePeselLengthInCell(InString, CellLocalization);
+            PeselValidations.ValidatePeselFormat(InString, CellLocalization);
             PeselFactors = 
                 new PeselMonthTranslator(
                     PeselNumberTranslator.ExtractPeselFactors(InString), Enums.ReturnTypeWhenStWrong.Exception, cellLocalization)
