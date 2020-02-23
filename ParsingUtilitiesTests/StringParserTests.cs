@@ -15,7 +15,12 @@ namespace ParsingUtilitiesTests
         [Fact]
         public void StringToDouble_For_UserInput_Assert_DoubleType()
         {
-            Assert.IsType<double>(StringParser.StringToDouble("one"));
+            // Arrange
+            var actual = StringParser.StringToDouble("2").GetType();
+            var expected = typeof(double);
+
+            // Assert
+            Assert.Equal(actual, expected);
         }
 
         [Fact]
@@ -27,7 +32,12 @@ namespace ParsingUtilitiesTests
         [Fact]
         public void StringToInt_For_UserInput_Assert_IntNumber()
         {
-            Assert.IsType<int>(StringParser.StringToInt("one"));
+            // Arrange
+            var actual = StringParser.StringToInt("1").GetType();
+            var expected = typeof(int);
+
+            // Assert
+            Assert.Equal(actual, expected);
         }
     }
 }

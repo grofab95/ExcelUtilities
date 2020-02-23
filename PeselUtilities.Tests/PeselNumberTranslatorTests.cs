@@ -4,10 +4,17 @@ namespace PeselUtilities.Tests
 {
     public class PeselNumberTranslatorTests
     {
-        [Fact]
-        public void ExtractOtherPeselNumbers_For_ReturnedNumbersAmount_Equal_Five()
+        [Theory]
+        [InlineData("94101396696")]
+        [InlineData("94101306696")]
+        public void ExtractOtherPeselElements_For_ReturnedElementsAmount_Equal_Five(string pesel)
         {
-            Assert.Equal<int>(5, PeselNumberTranslator.ExtractOtherPeselNumbers("95072686696"));
+            // Arrange
+            var otherPeselElements = PeselNumberTranslator.ExtractOtherPeselElements(pesel);
+            var otherPeselElementsAmount = otherPeselElements.Length;
+
+            // Assert
+            Assert.Equal<int>(5, otherPeselElementsAmount);
         }
     }
 }

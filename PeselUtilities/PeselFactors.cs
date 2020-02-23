@@ -5,6 +5,6 @@
         public int Year { get; set; }
         public int Month { get; set; }
         public int Day { get; set; }
-        public int OtherNumbers { get; set; }
+        public string OtherElements { get; set; }
     }
 }

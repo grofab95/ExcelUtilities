@@ -22,7 +22,7 @@ namespace PeselUtilities.Tests
                 Day = 31,
                 Month = 9,
                 Year = 1990,
-                OtherNumbers = 69222
+                OtherElements = "69222"
             };
 
             // Assert

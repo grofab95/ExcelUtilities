@@ -1349,9 +1349,15 @@
           "ExcelUtilities.dll": {}
         }
       },
+      "ParsingUtilities/1.0.0": {
+        "runtime": {
+          "ParsingUtilities.dll": {}
+        }
+      },
       "PeselUtilities/1.0.0": {
         "dependencies": {
-          "ExcelUtilities": "1.0.0"
+          "ExcelUtilities": "1.0.0",
+          "ParsingUtilities": "1.0.0"
         },
         "runtime": {
           "PeselUtilities.dll": {}
@@ -2059,6 +2065,11 @@
       "hashPath": "xunit.runner.visualstudio.2.4.0.nupkg.sha512"
     },
     "ExcelUtilities/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ParsingUtilities/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

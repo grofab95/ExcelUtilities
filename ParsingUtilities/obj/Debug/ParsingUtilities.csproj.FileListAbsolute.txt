@@ -1,0 +1,5 @@
+D:\code\ExcelUtilities\ParsingUtilities\bin\Debug\ParsingUtilities.dll
+D:\code\ExcelUtilities\ParsingUtilities\bin\Debug\ParsingUtilities.pdb
+D:\code\ExcelUtilities\ParsingUtilities\obj\Debug\ParsingUtilities.csprojAssemblyReference.cache
+D:\code\ExcelUtilities\ParsingUtilities\obj\Debug\ParsingUtilities.dll
+D:\code\ExcelUtilities\ParsingUtilities\obj\Debug\ParsingUtilities.pdb

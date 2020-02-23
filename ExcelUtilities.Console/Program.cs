@@ -26,8 +26,8 @@ namespace ExcelUtilities.Console
         {
             try
             {
-                System.Console.WriteLine(PeselNumberTranslator.ExtractOtherPeselNumbers("95072636696"));
-                System.Console.WriteLine("36696".Length);
+                System.Console.WriteLine(PeselNumberTranslator.ExtractOtherPeselElements("95072606696"));
+               // System.Console.WriteLine("36696".Length);
                 System.Console.ReadKey();
             }
             catch(Exception ex)

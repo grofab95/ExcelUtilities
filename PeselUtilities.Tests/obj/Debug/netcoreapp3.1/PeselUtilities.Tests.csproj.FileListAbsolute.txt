@@ -96,3 +96,5 @@ D:\code\ExcelUtilities\PeselUtilities.Tests\obj\Debug\netcoreapp3.1\PeselUtiliti
 D:\code\ExcelUtilities\PeselUtilities.Tests\obj\Debug\netcoreapp3.1\PeselUtilities.Tests.csproj.CopyComplete
 D:\code\ExcelUtilities\PeselUtilities.Tests\obj\Debug\netcoreapp3.1\PeselUtilities.Tests.dll
 D:\code\ExcelUtilities\PeselUtilities.Tests\obj\Debug\netcoreapp3.1\PeselUtilities.Tests.pdb
+D:\code\ExcelUtilities\PeselUtilities.Tests\bin\Debug\netcoreapp3.1\ParsingUtilities.dll
+D:\code\ExcelUtilities\PeselUtilities.Tests\bin\Debug\netcoreapp3.1\ParsingUtilities.pdb
